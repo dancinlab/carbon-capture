@@ -1,0 +1,78 @@
+{
+  "$schema": "c4",
+  "role": "carbon-capture — Architecture (JSON tree · SSOT)",
+  "title": "carbon-capture — Architecture",
+  "updated": "2026-06-27",
+  "ssot_note": "JSON=SSOT (AI/tool parse); humans view architecture.html via `python3 serve.py`. Update in-place (not append). History/decisions/dates → CHANGELOG.md + git (never in tree). Hierarchy decomposes via `children` (commons single-doc); one fact per node, deeper detail → child nodes. Imported origin spec = state/n6-carbon-capture-spec.md (seed of record, not SSOT).",
+  "children": [
+    {
+      "id": "overview",
+      "role": "Engineer CO₂ capture-storage-conversion as a designed multi-scale system (HEXA-CCUS), not a single sorbent. Carbon (Z=6) anchored, n=6 invariant lattice. DAC single-stage rigs are the first instance, not the boundary; the 8-stage L0–L7 chain is the unit of design.",
+      "children": [
+        {
+          "id": "scope",
+          "role": "The capture-storage-conversion system, not one sorbent. Reference fields = adsorption/MOF chemistry, separation-process engineering, carbon-materials, geologic sequestration."
+        },
+        {
+          "id": "thesis",
+          "role": "Capture cost/energy is an engineering-and-volume problem, reopenable down to a thermodynamic floor — not a fixed ceiling.",
+          "children": [
+            { "id": "thesis.energy-floor", "role": "Separation work has a floor W_min = RT·ln(1/x_CO2) ≈ 19.4 kJ/mol ≈ J₂−τ = 20; today's wet-amine rigs sit at ≈200 kJ/mol (σ−φ = 10× headroom)." },
+            { "id": "thesis.cost-floor", "role": "Capture cost reopenable toward CAPEX ≈ $24/ton (= J₂) vs Climeworks ≈ $600/ton (25× gap)." },
+            { "id": "thesis.waste-to-value", "role": "Captured CO₂ is feedstock, not waste: conversion to graphene/CNT/diamond flips value from $0/ton to ~$1M/ton." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "components",
+      "role": "The 7-level HEXA-CCUS stack — each level a design layer from atomic sorbent to planetary control, all bound by the n=6 lattice (φ=2 · τ=4 · σ=12 · J₂=24).",
+      "children": [
+        {
+          "id": "L0.sorbent",
+          "role": "HEXA-SORBENT (material) — top-6 MOF/sorbents, ALL CN=6 octahedral. Target 48 mmol/g (= J₂·φ) vs Climeworks 2.0 mmol/g.",
+          "children": [
+            { "id": "L0.candidates", "role": "Mg/Co/Ni-MOF-74, Al-MIL-53, Fe-MIL-100, Cr-MIL-101 — 6 metals, all CN=6; Zeolite-6A pore, graphene C6 ring." }
+          ]
+        },
+        {
+          "id": "L1.process",
+          "role": "HEXA-PROCESS (process) — TSA 6-stage cycle, PSA 12-bed (6 adsorb + 6 desorb). Bottleneck level: get separation right and the rest follows. Energy target 20 kJ/mol (σ−φ = 10× below 200).",
+          "children": [
+            { "id": "L1.sensors", "role": "6 sensor types (CO2/O2/H2O/T/P/flow); ΔT = 120 °C = σ·(σ−φ)." }
+          ]
+        },
+        {
+          "id": "L2.reactor",
+          "role": "HEXA-REACTOR (core) — honeycomb hexagonal geometry (Hales 2001 optimal). 6 reactor types (rotating/packed/fluidized/monolith/hollow-fiber/microreactor). Target 12 ton/day/module (= σ, 12× current)."
+        },
+        {
+          "id": "L3.chip",
+          "role": "HEXA-CHIP (chip) — RISC-V N6: 6-stage pipeline, 6 sensor channels, 12 data streams. ADC σ−τ=8 bit gas / σ=12 bit system; SNN 6 layers, 6-qubit sensing. Target ppb-level CO₂ sensing."
+        },
+        {
+          "id": "L4.plant",
+          "role": "HEXA-PLANT (system) — industrial scale. DAC farm 6 rows / 36 sections; 12 MPa SC-CO2 pipeline, 120 km boosters, 12 injection wells, 6 sealing layers. Target 1 Mt/yr (250× Climeworks), CAPEX $24/ton."
+        },
+        {
+          "id": "L5.transmute",
+          "role": "HEXA-TRANSMUTE (conversion) — CO₂ → diamond (sp3, τ=4 bonds) / graphene (C6) / CNT / C60. All products Carbon Z=6; 6 CVD chambers. Value $0/ton → graphene $1M/ton."
+        },
+        {
+          "id": "L6.universal",
+          "role": "HEXA-UNIVERSAL (planetary) — 6 latitude bands × 6 stations = 36 hubs. 6 subsystems: atmospheric/ocean/crustal/stratospheric/biosphere/control. Target 420 → 280 ppm in σ=12 years, 100 Gt CO₂/yr."
+        }
+      ]
+    },
+    {
+      "id": "data-flow",
+      "role": "Capture → store → convert: air → sorb → desorb/concentrate → compress → sequester OR transmute to carbon materials.",
+      "children": [
+        { "id": "flow.capture", "role": "Air/flue gas → L0 sorbent adsorption → L1 TSA/PSA desorption-concentration → L2 honeycomb reactor throughput." },
+        { "id": "flow.store", "role": "Concentrated CO₂ → 12 MPa SC-CO₂ compression → pipeline → geologic injection (L4)." },
+        { "id": "flow.convert", "role": "Alternatively → L5 CVD transmutation → graphene/CNT/diamond/C60 carbon products." },
+        { "id": "flow.control", "role": "L3 chip sensing + L6 36-hub network close the planetary control loop (ppm setpoint tracking)." }
+      ]
+    }
+  ]
+}
