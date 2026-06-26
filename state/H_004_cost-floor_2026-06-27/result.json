@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "cost_ratio_600_24": 25.0,
+    "gap_to_doe_600_100": 6.0,
+    "doublings_for_25x_at_LR18": 16.22000805623574,
+    "neg_control_ratio": 1.0,
+    "endpoint_clears_aspiration_floor": false
+  },
+  "falsifiers": [
+    {
+      "name": "F-004-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-004-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-004-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-004-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-004-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-004-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "PARTIAL",
+  "interpretation": "Gap (25x) and learning-curve route are credible; the $24/ton endpoint is below the $50 aspiration and $100 DOE reference floors -> PARTIAL (endpoint unverified-optimistic)."
+}

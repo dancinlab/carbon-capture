@@ -1,0 +1,49 @@
+{
+  "metrics": {
+    "pa_3": 4.559014113909554,
+    "pa_4": 3.9999999999999996,
+    "pa_6": 3.722419436408398,
+    "pa_12": 3.586301888672214,
+    "pa_1000": 3.544913532968699,
+    "circle_limit": 3.5449077018110318,
+    "argmin_over_tilers": 6,
+    "hex_ordering_ok": true,
+    "n2_raises": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-005-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-005-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-005-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-005-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-005-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-005-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED"
+}

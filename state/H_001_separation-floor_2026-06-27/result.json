@@ -1,0 +1,58 @@
+{
+  "metrics": {
+    "floor_air_kj_mol": 19.274525137746224,
+    "floor_flue_kj_mol": 5.256042197575963,
+    "floor_pure_kj_mol": 0.024914350713443296,
+    "x_sweep": [
+      0.5,
+      0.12,
+      0.04,
+      0.004,
+      0.00042
+    ],
+    "w_sweep_kj_mol": [
+      1.7182820757664836,
+      5.256042197575963,
+      7.979454853327147,
+      13.687464355757204,
+      19.274525137746224
+    ],
+    "strictly_increasing": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-001-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-001-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-001-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-001-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-001-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-001-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED"
+}

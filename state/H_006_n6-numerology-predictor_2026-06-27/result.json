@@ -1,0 +1,49 @@
+{
+  "metrics": {
+    "floor_kj_mol": 19.274525137746224,
+    "mass_frac_48_g_g": 2.112432,
+    "n_total_identities": 6,
+    "n_implausible": 3,
+    "frac_implausible": 0.5,
+    "flags_consistent": true,
+    "relabel_matches": 5,
+    "relabel_total": 5
+  },
+  "falsifiers": [
+    {
+      "name": "F-006-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-006-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-006-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-006-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-006-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-006-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED here = the SKEPTICAL claim holds: the n=6 lattice is decorative, not predictive. It labels impossible targets (48 mmol/g, $24/ton) as cleanly as real ones (20 kJ/mol, hexagon), and a physics-blind relabel matches just as well."
+}

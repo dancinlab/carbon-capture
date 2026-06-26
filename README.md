@@ -24,15 +24,17 @@ Framing claim                     carbon-capture verdict (HEXA-CCUS spec)
 ```
 
 - **Energy floor** — `W_min ≈ 20 kJ/mol` (= J₂−τ); current wet-amine ≈ 200 kJ/mol leaves
-  a `σ−φ = 10×` reduction band.
-- **Cost floor** — CAPEX reopenable toward `$24/ton (= J₂)` vs Climeworks ≈ $600/ton.
+  a `σ−φ = 10×` reduction band. ✅ verified (H_001/H_002: floor 19.3 kJ/mol, headroom ~10×).
+- **Cost floor** — CAPEX reopenable toward Climeworks ≈ $600/ton. 🟡 the 25× gap is
+  learning-curve-plausible, but the `$24/ton (= J₂)` endpoint is verification-flagged
+  optimistic — below the $50/$100 reference floors (H_004).
 - **Waste-to-value** — captured carbon converts to graphene/CNT/diamond/C60, flipping
   value from $0/ton to ~$1M/ton.
 
 ## The 7-level stack (n=6 lattice: φ=2 · τ=4 · σ=12 · J₂=24)
 
 ```
-L0 HEXA-SORBENT    material   — top-6 MOFs, all CN=6 octahedral · target 48 mmol/g
+L0 HEXA-SORBENT    material   — top-6 MOFs, all CN=6 octahedral · 48 mmol/g target 🔴 unreachable (H_003)
 L1 HEXA-PROCESS    process    — TSA 6-stage · PSA 12-bed · energy target 20 kJ/mol  ← bottleneck
 L2 HEXA-REACTOR    core       — honeycomb hexagonal · 6 reactor types · 12 ton/day/module
 L3 HEXA-CHIP       chip       — RISC-V N6 6-stage pipeline · ppb-level sensing
@@ -41,13 +43,42 @@ L5 HEXA-TRANSMUTE  conversion — CO₂ → diamond / graphene / CNT / C60
 L6 HEXA-UNIVERSAL  planetary  — 36 hubs · 6 subsystems · 420 → 280 ppm in σ=12 years
 ```
 
+## Verification (pre-register → falsify → run → verdict)
+
+A hypothesis-verification system (anima-parity) tests the spec's claims with deterministic,
+stdlib-only falsifiers — separating **real physics** from **n=6 numerology** without
+tune-to-green. First batch (6 cards, each 6/6 falsifiers PASS):
+
+```
+H_001 separation-floor      🟢 SUPPORTED   floor 19.275 kJ/mol, monotone in dilution
+H_002 energy-headroom       🟢 SUPPORTED   ~10×(spec)·20×(Climeworks)·7.8×(next-gen)
+H_003 sorbent-capacity      🟢 SUPPORTED   48 mmol/g = 211% sorbent mass → target REFUTED
+H_004 cost-floor            🟡 PARTIAL     25× gap learnable; $24/ton endpoint optimistic
+H_005 honeycomb-geometry    🟢 SUPPORTED   hexagon = min-wall tiler (not the global min)
+H_006 numerology-predictor  🟢 SUPPORTED   3/6 lattice→target identities physically impossible
+                                           → the n=6 lattice is a label, not a predictor
+```
+
+Key finding: the genuine wins (separation floor, honeycomb) hold on physics that never
+invokes {2,4,12,24}; the lattice attaches equally clean identities to impossible targets
+(48 mmol/g, $24/ton). Every lattice-derived number must clear a physics bounds-check before
+becoming a goal (`ARCHITECTURE.json` → `convergence.records`).
+
+- `HYPOTHESES/` — `REGISTRY.jsonl` + one rich card per hypothesis (`cards/H_*.md`).
+- `tool/carbon_capture.py` — shared deterministic harness (separation floor, headroom,
+  gravimetric bound, honeycomb P/√A, falsifier ledger).
+- `state/H_*/` — per-hypothesis run script + `result.json`.
+
 ## Structure
 
 ```
 carbon-capture/
 ├─ src/              — source code
+├─ HYPOTHESES/       — pre-register → falsify → run → verdict (REGISTRY.jsonl + cards/H_*.md)
+├─ tool/             — shared deterministic harness (carbon_capture.py)
 ├─ state/            — all work artifacts (experiments · bench · verification), git-tracked
 │                      n6-carbon-capture-spec.md = imported HEXA-CCUS origin spec
+│                      H_*_<date>/ = per-hypothesis run + result.json
 ├─ ARCHITECTURE.json — final architecture SSOT (JSON `children` tree, update-in-place)
 ├─ architecture.html — human viewer for the JSON (run `python3 serve.py`)
 └─ CHANGELOG.md      — history (append-only)
