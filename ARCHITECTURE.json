@@ -73,6 +73,14 @@
         { "id": "flow.convert", "role": "Alternatively → L5 CVD transmutation → graphene/CNT/diamond/C60 carbon products." },
         { "id": "flow.control", "role": "L3 chip sensing + L6 36-hub network close the planetary control loop (ppm setpoint tracking)." }
       ]
+    },
+    {
+      "id": "verification",
+      "role": "Hypothesis-verification system (anima-parity): pre-register → falsify → run → verdict. Flat registry + one rich card per hypothesis; shared deterministic harness in repo-root tool/.",
+      "children": [
+        { "id": "HYPOTHESES", "role": "HYPOTHESES/ — REGISTRY.jsonl (one JSON line per hypothesis) + cards/H_*.md (frozen pre-register + ≥5 falsifiers) + cards/_TEMPLATE.md skeleton. Domains: sorbent/process/reactor/chip/plant/transmute/system." },
+        { "id": "tool", "role": "tool/carbon_capture.py — stdlib-only closed-form primitives (min_separation_work Sherwood floor, energy_headroom, capacity/cost/annual ratios) + Falsifier/evaluate ledger. Per-hypothesis runs + result.json live under state/<hX>/." }
+      ]
     }
   ]
 }
