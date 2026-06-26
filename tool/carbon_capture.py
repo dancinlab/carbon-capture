@@ -18,6 +18,9 @@ from dataclasses import dataclass
 # Universal gas constant (J/mol/K).
 R_GAS = 8.314462618
 
+# Molar mass of CO2 (g/mol) — used for gravimetric uptake <-> mass-fraction conversion.
+M_CO2 = 44.009
+
 
 # --- thermodynamic separation floor -------------------------------------------
 
@@ -71,6 +74,43 @@ def annual_capacity_ratio(plant_ton_yr: float, baseline_ton_yr: float) -> float:
     if baseline_ton_yr <= 0:
         raise ValueError(f"baseline must be > 0: {baseline_ton_yr}")
     return plant_ton_yr / baseline_ton_yr
+
+
+# --- gravimetric bound ---------------------------------------------------------
+
+def co2_mass_fraction(mmol_per_g: float) -> float:
+    """Convert a gravimetric CO2 uptake (mmol CO2 per gram of sorbent) into the
+    mass of CO2 captured per gram of sorbent:
+
+        m_CO2/m_sorbent = uptake[mol/g] * M_CO2[g/mol]
+                        = mmol_per_g * 1e-3 * 44.009
+
+    A physical sanity bound for any sorbent target. The HEXA-CCUS `48 mmol/g`
+    (= J2*phi) target maps to 48e-3 * 44.009 = 2.11 g CO2 per g sorbent (211 %
+    of the sorbent's own mass) — far above any measured adsorbent, which top out
+    near ~1 mmol/g at DAC partial pressure and well under ~1 g/g even at high
+    pressure. Returned value is dimensionless (g per g)."""
+    if mmol_per_g < 0:
+        raise ValueError(f"mmol_per_g must be >= 0: {mmol_per_g}")
+    return mmol_per_g * 1e-3 * M_CO2
+
+
+# --- packing geometry ----------------------------------------------------------
+
+def perimeter_area_ratio(n_sides: int) -> float:
+    """Dimensionless wall-cost of a regular n-gon channel: perimeter divided by
+    sqrt(area), the cross-sectional wall length per unit throughput area.
+
+        P / sqrt(A) = 2 * sqrt(n * tan(pi / n))
+
+    Lower = less wall material per unit flow area. Among the only three regular
+    polygons that tile the plane (n=3,4,6), the hexagon (n=6) is the minimum —
+    the closed-form statement behind the honeycomb conjecture (Hales 2001) and
+    the HEXA-REACTOR geometry choice. The circle (limit n->inf) gives 2*sqrt(pi)
+    = 3.545 but does not tile."""
+    if n_sides < 3:
+        raise ValueError(f"n_sides must be >= 3: {n_sides}")
+    return 2.0 * math.sqrt(n_sides * math.tan(math.pi / n_sides))
 
 
 # --- falsifier harness --------------------------------------------------------

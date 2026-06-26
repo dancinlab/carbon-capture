@@ -2,6 +2,31 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — first hypothesis batch (H_001–H_006) generated + verified
+
+- Generated and ran the first 6 pre-registered hypotheses (each 6/6 falsifiers, deterministic,
+  stdlib-only). Verdicts (verbatim stdout pasted in each card, `result.json` under `state/`):
+  - **H_001** separation-floor 🟢 SUPPORTED — `W_min(420 ppm) = 19.275 kJ/mol`, monotone-rising
+    as air gets more dilute; flue ~3.7× easier; near-pure → ~0.
+  - **H_002** energy-headroom 🟢 SUPPORTED — headroom 10.4×(spec)/20×(Climeworks 8.8 GJ/ton)/
+    7.8×(next-gen), all inside the pre-registered 3–30× band, none < 1×.
+  - **H_003** sorbent-capacity-bound 🟢 SUPPORTED (target refuted) — 48 mmol/g (= J₂·φ) = 211% CO₂
+    by sorbent mass, 4.8× best-case / 32× in-condition → physically unreachable.
+  - **H_004** cost-floor 🟡 PARTIAL — 25× gap learning-curve-plausible (~16 doublings @ 18% LR),
+    but the $24/ton (= J₂) endpoint sits below the $50/$100 reference floors (unverified-optimistic).
+  - **H_005** honeycomb-geometry 🟢 SUPPORTED — hexagon is the min-wall cell among plane-tiling
+    regular polygons {3,4,6}; honest limit held (n=12 lower → not the global min).
+  - **H_006** n6-numerology-predictor 🟢 SUPPORTED (skeptic holds) — 3/6 lattice→target identities
+    physically implausible + physics-blind relabel matches 5/5 → the n=6 lattice is a decorative
+    label, not a predictor.
+- Harness (`tool/carbon_capture.py`): added `co2_mass_fraction` (gravimetric bound, H_003) and
+  `perimeter_area_ratio` (honeycomb P/√A, H_005); `M_CO2` constant.
+- `HYPOTHESES/REGISTRY.jsonl`: 6 registry lines (tiers 🟢×5, 🟡×1). Cards `H_001..H_006` + run
+  scripts/`result.json` under `state/H_00*_2026-06-27/`.
+- `ARCHITECTURE.json` lockstep: `convergence.records[numerology-not-physical]` (verify lattice
+  numbers against physics before goal-setting); `L0.sorbent` 48 mmol/g flagged unreachable;
+  `thesis.cost-floor` $24/ton flagged optimistic; `verification` node lists the 6 verdicts.
+
 ## 2026-06-27 — import echoes provenance excerpt
 
 - Added `state/echoes-carbon-capture-excerpt.md`: the echoes-side surface entry for carbon

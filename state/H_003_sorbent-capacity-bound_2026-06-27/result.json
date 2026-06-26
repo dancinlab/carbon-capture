@@ -1,0 +1,47 @@
+{
+  "metrics": {
+    "mass_frac_target_g_g": 2.112432,
+    "mass_frac_best_g_g": 0.44009000000000004,
+    "mass_frac_zero_g_g": 0.0,
+    "ratio_target_over_best": 4.8,
+    "ratio_target_over_dac": 32.0,
+    "known_sorbent_ge_48mmolg": false
+  },
+  "falsifiers": [
+    {
+      "name": "F-003-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-003-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-003-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-003-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-003-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-003-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED here = the 48 mmol/g TARGET is refuted as physically unreachable."
+}

@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "floor_kj_mol": 19.274525137746224,
+    "E_climeworks_kj_mol": 387.2792,
+    "headroom_spec_200": 10.376390524315976,
+    "headroom_climeworks": 20.09280110572336,
+    "headroom_optimistic_150": 7.782292893236982,
+    "headroom_at_floor": 1.0
+  },
+  "falsifiers": [
+    {
+      "name": "F-002-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-002-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-002-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-002-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-002-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-002-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED"
+}
