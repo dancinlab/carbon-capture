@@ -2,6 +2,13 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — import echoes provenance excerpt
+
+- Added `state/echoes-carbon-capture-excerpt.md`: the echoes-side surface entry for carbon
+  capture (HEXA-Earth "Environment Toolkit" toolkit + closure rows, multilingual mirrors,
+  + concrete-mineralization cross-link), imported from `dancinlab/echoes` README. Seed of
+  record alongside the deep `state/n6-carbon-capture-spec.md`; CLAUDE.md gotcha updated.
+
 ## 2026-06-27 — hypothesis-verification system
 
 - Scaffolded `HYPOTHESES/` (anima-parity): `CLAUDE.md`, empty `REGISTRY.jsonl`,

@@ -31,7 +31,10 @@ carbon-capture/
 
 ## Gotchas
 
-- The imported `state/n6-carbon-capture-spec.md` is the origin spec carried over from
-  `dancinlab/hexa-grid` (CARBON-CAPTURE.md). Treat it as the seed of record, not the SSOT —
-  the live design SSOT is `ARCHITECTURE.json`. Distill from the spec into the tree; do not
-  edit the spec to track current design.
+- Imported origin docs under `state/` are seeds of record, NOT the SSOT (the live design
+  SSOT is `ARCHITECTURE.json`). Distill from them into the tree; don't edit them to track
+  current design:
+  - `state/n6-carbon-capture-spec.md` — the deep spec from `dancinlab/hexa-grid`
+    (CARBON-CAPTURE.md, ~17k lines).
+  - `state/echoes-carbon-capture-excerpt.md` — the echoes-side surface entry
+    (HEXA-Earth "Environment Toolkit" toolkit/closure rows + multilingual mirrors).
