@@ -2,6 +2,25 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — fourth hypothesis batch (H_014–H_016) + closed-form dry boundary
+
+- Three pre-registered hypotheses (each 6/6 falsifiers) closing the systems/lifecycle thread
+  (goal: 고갈시까지 심화 — run the closed-form harness to exhaustion):
+  - **H_014** net-negativity 🟢 SUPPORTED — at 9 GJ/ton the breakeven grid intensity is
+    0.40 kgCO₂/kWh; a fossil grid (0.45) gives net −0.12 ton/ton (FUTILE), clean power (0.05) gives
+    +0.88; halving the energy doubles the breakeven → the whole stack is conditional on clean energy.
+  - **H_015** storage-capacity 🟢 SUPPORTED — geologic void (~1e4 Gt) is ~9× the 1095 Gt demand
+    (100 yr at 100 Gt/yr) → storage is NOT the bottleneck; energy (H_014) and air handling (H_013) are.
+  - **H_016** humidity-coload 🟢 SUPPORTED — ambient air carries ~37× more H₂O than CO₂ (50% RH/25°C),
+    up to ~170× hot/humid → the parasitic water co-load the L0 candidate list omits.
+- Harness +2 primitives: `net_capture_fraction`, `humidity_to_co2_ratio`.
+- `REGISTRY.jsonl`: +3 (all 🟢; now **16 total** — 14 🟢 / 2 🟡).
+- **Dry boundary declared**: the closed-form ($0, stdlib) harness is exhausted at H_016 — every
+  spec claim numerically falsifiable from thermodynamics/arithmetic is covered. Remaining open
+  questions (sorbent kinetics, cycle-life degradation, MOF screening/DFT, bottom-up CAPEX) require
+  REAL measurement and fall under the 실측전-research rule. `ARCHITECTURE.json` gains a
+  `HYPOTHESES.dry-boundary` node; `verification` node → 16 verdicts; README refreshed.
+
 ## 2026-06-27 — third hypothesis batch (H_010–H_013): process/storage/sorbent/plant physics
 
 - Four pre-registered hypotheses (each 6/6 falsifiers) deepening the *real-physics* thread —

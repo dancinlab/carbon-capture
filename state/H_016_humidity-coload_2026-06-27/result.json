@@ -1,0 +1,48 @@
+{
+  "metrics": {
+    "ratio_50rh_25c": 37.218494442762534,
+    "ratio_100rh_40c": 173.3134443166625,
+    "ratio_20rh_10c": 5.770975617540815,
+    "ratio_80rh_25c": 59.54959110842006,
+    "ratio_20rh_25c": 14.887397777105015,
+    "ratio_0rh_25c": 0.0,
+    "over_rh_raises": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-016-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-016-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-016-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-016-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-016-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-016-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = ambient air carries ~37x more H2O than CO2 (50%/25C), up to ~170x hot/humid -> water is the dominant minor-species duty the L0 candidate list omits."
+}

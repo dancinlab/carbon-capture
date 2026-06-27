@@ -1,0 +1,49 @@
+{
+  "metrics": {
+    "kwh_per_ton": 2500.0,
+    "breakeven_kg_per_kwh": 0.4,
+    "breakeven_half_kg_per_kwh": 0.8,
+    "net_fossil_0p45": -0.125,
+    "net_mixed_0p20": 0.5,
+    "net_clean_0p05": 0.875,
+    "nc_zero_energy": 1.0,
+    "nc_zero_grid": 1.0
+  },
+  "falsifiers": [
+    {
+      "name": "F-014-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-014-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-014-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-014-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-014-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-014-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = DAC at 9 GJ/ton is net-futile on a fossil grid (breakeven ~0.40 kg/kWh); net removal needs clean energy (<~0.2 kg/kWh) or the H_010 efficiency gains."
+}

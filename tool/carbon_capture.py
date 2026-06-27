@@ -254,6 +254,45 @@ def air_volume_per_ton_co2(
     return n_air * m_air_kg_per_mol / air_density_kg_m3
 
 
+# --- lifecycle: net-negativity (system) ---------------------------------------
+
+def net_capture_fraction(e_capture_j_per_ton: float, grid_intensity_kg_per_kwh: float) -> float:
+    """Net CO2 actually removed per ton captured, after subtracting the CO2 emitted to
+    power the capture:
+
+        emitted_kg = (E_capture[J] / 3.6e6 J/kWh) * grid_intensity[kg/kWh]
+        net_fraction = 1 - emitted_kg / 1000        [ton net / ton captured]
+
+    < 0 means the capture EMITS more than it removes (futile on that energy source).
+    At 9 GJ/ton (= 2500 kWh/ton) a fossil grid ~0.45 kg/kWh emits ~1125 kg > 1000 kg
+    captured -> net negative. Clean energy (< ~0.4 kg/kWh) is required for net removal."""
+    if e_capture_j_per_ton < 0 or grid_intensity_kg_per_kwh < 0:
+        raise ValueError("inputs must be >= 0")
+    emitted_kg = (e_capture_j_per_ton / 3.6e6) * grid_intensity_kg_per_kwh
+    return 1.0 - emitted_kg / 1000.0
+
+
+# --- humidity: water co-load vs CO2 (L0/L1) -----------------------------------
+
+def humidity_to_co2_ratio(
+    rh_fraction: float, temp_c: float, x_co2: float = 420e-6, p_atm_kpa: float = 101.325
+) -> float:
+    """Molar ratio of water vapour to CO2 in ambient air:
+
+        es(T) = 0.6108 * exp(17.27*T / (T + 237.3))   [kPa, Tetens]
+        x_H2O = rh * es / p_atm        ratio = x_H2O / x_co2
+
+    At 50 % RH, 25 C this is ~37 — the contactor sees ~37× more H2O than CO2, the
+    parasitic co-adsorption load behind much of DAC's real energy on physisorbents."""
+    if not (0.0 <= rh_fraction <= 1.0):
+        raise ValueError(f"rh_fraction must be in [0,1]: {rh_fraction}")
+    if not (0.0 < x_co2 < 1.0) or p_atm_kpa <= 0:
+        raise ValueError("invalid x_co2 / p_atm")
+    es = 0.6108 * math.exp(17.27 * temp_c / (temp_c + 237.3))
+    x_h2o = rh_fraction * es / p_atm_kpa
+    return x_h2o / x_co2
+
+
 # --- falsifier harness --------------------------------------------------------
 
 @dataclass

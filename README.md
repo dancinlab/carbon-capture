@@ -63,7 +63,16 @@ H_010 tsa-regeneration      🟢 SUPPORTED   sensible heat ~100 kJ/mol = the hea
 H_011 sc-co2-compression    🟢 SUPPORTED   ~11.9 kJ/mol to 12 MPa (supercritical OK)
 H_012 sorbent-binding-opt   🟢 SUPPORTED   Sabatier optimum ~50 kJ/mol (coverage vs regen)
 H_013 plant-air-throughput  🟢 SUPPORTED   ~1.3e12 m³ air/yr at 1 Mt/yr (flue 286× less)
+H_014 net-negativity        🟢 SUPPORTED   fossil grid futile; breakeven 0.40 kgCO₂/kWh
+H_015 storage-capacity      🟢 SUPPORTED   void ~9× demand → not the bottleneck
+H_016 humidity-coload       🟢 SUPPORTED   air carries 37–170× more H₂O than CO₂
 ```
+
+**Closed-form harness exhausted at H_016** (16 cards: 14 🟢 / 2 🟡). Every spec claim numerically
+falsifiable from thermodynamics/arithmetic at $0 is covered. What remains — sorbent
+kinetics/mass-transfer, cycle-life degradation, MOF screening (DFT), bottom-up CAPEX — needs
+**real measurement**, gated behind the repo's *실측전 research* rule (a literature pass before
+spending on DFT/screening/GPU). Those become `H_017+` only after research justifies the spend.
 
 Two honest threads: (1) the **real physics** wins (floor, headroom + its sensible-heat
 mechanism, honeycomb, compression, binding optimum, air-handling) hold *without* invoking
