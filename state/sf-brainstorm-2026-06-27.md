@@ -184,16 +184,85 @@ Enumerated by **how you physically grab a CO₂ molecule** — 7 orthogonal mech
 
 ---
 
-## Dry assessment (break-walls: families enumerated, not one exhausted)
+---
 
-Seven orthogonal *grabbing principles* surveyed — acoustic/mechanical, electromagnetic,
-photonic/quantum, radiative/thermal, biological, electrochemical, structural/orbital. Further
-ideas now recombine these (e.g. "magnetocaloric + radiative frost" = D1×D3, already implied) rather
-than introduce a new principle → the divergence well is **dry at the family level**. The honest
-filter: most are energy-loss vs the H_001 floor (B4 laser, A4 centrifuge cascade, D1 frost) and
-serve as *negative-space* that sharpens why swing-mode + working-capacity (H_019) is the live path;
-a few (C1 photoswitch, F1 carbon-battery, B2 oxy-magnet, E2 breathing-stone) attack the *dominant
-addressable term* (H_010 regeneration) by a genuinely new route and are promoted to `H_A*` cards.
+## Family H — PHASE-TRAPPING (grab by forcing a new phase)
 
-Promoted to 🜂 ABSTRACT cards: A4→H_A001, D1→H_A002, B4→H_A003, B2→H_A004, A2→H_A005,
-F1→H_A006, E2→H_A007, C1→H_A008.
+🧊 **H1 · SKY-CLATHRATE** — "하늘 얼음 우리"
+- Mechanism: form a CO₂ clathrate hydrate (CO₂ caged in a water-ice lattice) at modest
+  pressure/cold; the cage *selectively* traps CO₂ over N₂ — capture as a crystallization.
+- Falsifiable kernel: hydrate formation pressure at 400-ppm CO₂ partial pressure (Clausius-Clapeyron
+  on the hydrate stability line) vs the compression energy to reach it → likely needs pre-concentration.
+- Novelty: a *phase boundary* does the selecting, not a sorbent surface → `H_A009`.
+
+🌊 **H2 · ABYSS-ICE** — "심해 얼음 저장"
+- Mechanism: inject captured CO₂ as a hydrate onto the deep-ocean floor where pressure/cold keep it
+  solid and gravity-stable — storage-as-phase, no caprock needed (alt to H_015 geology).
+- Falsifiable kernel: hydrate stability depth vs leakage/dissolution rate over centuries.
+- Novelty: storage permanence from a phase diagram, not a geologic seal.
+
+## Family I — MEMBRANE / BARRIER (grab by selective passage)
+
+🪟 **I1 · ONE-WAY-GLASS** — "한쪽 유리"
+- Mechanism: a facilitated-transport membrane with mobile CO₂ carriers (or graphene-oxide laminate)
+  lets CO₂ permeate while N₂/O₂ are blocked — continuous, no swing, no regeneration heat.
+- Falsifiable kernel: permeance × selectivity at 400-ppm driving force vs the area/ΔP needed
+  (Robeson-bound trade-off) — the dilute partial pressure is the kill.
+- Novelty: steady-state separation with *zero cycle* — sidesteps the entire H_010 regeneration term.
+
+🧫 **I2 · LUNG-WALL** — "허파 벽"
+- Mechanism: a bio-inspired alveolar membrane stack (huge area/volume) with carbonic-anhydrase-lined
+  pores, breathing CO₂ into an alkaline sink continuously.
+- Falsifiable kernel: mass-transfer-limited flux × area vs Gt/yr.
+- Novelty: lung morphology as the contactor — area without the fan power of H_013.
+
+## Family J — GEOCHEMICAL (grab by accelerating rock)
+
+⛰️ **J1 · FAST-WEATHER** — "빠른 풍화"
+- Mechanism: spread finely-milled olivine/basalt over land/coast; natural silicate weathering pulls
+  CO₂ into stable carbonate — accelerate a geological process that already runs for free.
+- Falsifiable kernel: weathering rate per tonne of rock (grain-size limited) × deployable tonnage vs
+  Gt/yr, minus the milling/transport CO₂ (the net-negativity check, cf. H_014) → `H_A010`.
+- Novelty: the planet's own thermostat, sped up — no plant, permanence built-in.
+
+🌊 **J2 · BLUE-ALKALINITY** — "푸른 알칼리"
+- Mechanism: add alkalinity (electrochemically generated hydroxide, or olivine) to surface oceans so
+  they absorb more atmospheric CO₂ as bicarbonate — the ocean as a 38,000-Gt sponge.
+- Falsifiable kernel: alkalinity added per CO₂ absorbed × energy to generate it vs floor; ecosystem pH limits.
+- Novelty: enlarge the natural ocean sink rather than build a capture device.
+
+## Family K — ARTIFICIAL PHOTOSYNTHESIS (grab by sunlight → fuel, in place)
+
+🍃 **K1 · ARTIFICIAL-LEAF** — "인공 잎"
+- Mechanism: a photo-electrochemical cell reduces captured/ambient CO₂ to CO/formate/methanol using
+  only sunlight + water — capture and conversion (H_008) fused into one sunlight-driven step.
+- Falsifiable kernel: solar-to-fuel efficiency × insolation × area vs the reduction enthalpy (H_008's
+  32.8 GJ/ton-C floor) — predicts large area, but $0 energy → `H_A011`.
+- Novelty: skips capture AND external energy — the leaf does both with photons.
+
+🦠 **K2 · ELECTRO-MICROBE** — "전기 미생물"
+- Mechanism: microbial electrosynthesis — electroautotrophs on a cathode fix CO₂ into fuels/biomass
+  using renewable electrons (bio + electrochemical hybrid).
+- Falsifiable kernel: coulombic efficiency × cell voltage vs product energy; growth rate vs Gt/yr.
+- Novelty: living catalyst + electrode, a self-repairing artificial-photosynthesis route.
+
+---
+
+## Dry assessment v2 (break-walls: enumeration expanded before declaring dry)
+
+A first pass stopped at 7 families prematurely; the honest re-enumeration adds **4 genuinely
+orthogonal grabbing-principles** — phase-trapping (H, clathrate), membrane/barrier (I, zero-cycle
+passage), geochemical (J, enhanced weathering / ocean alkalinity), and artificial-photosynthesis
+(K, sunlight→fuel in place). With **11 families** now surveyed (~35 concepts), further ideas
+recombine existing principles (plasma-catalysis = B×K, thermoacoustic = A×D, bioelectro = E×F×K)
+rather than introduce a new way to *grab a CO₂ molecule* → genuinely **dry at the principle level**.
+
+Honest map across all 11 families:
+- Energy-loss NEGATIVES (sharpen the floor): A4 centrifuge, B4 laser, D1 frost, B2 oxy-magnet.
+- Attack the H_010 regeneration term by a new route: C1/H_A008 photoswitch, F1/H_A006 carbon-battery,
+  I1 zero-cycle membrane.
+- Sidestep the plant / air-wall entirely: E2/H_A007 breathing-stone, A2/H_A005 vortex, J1/H_A010 weathering.
+- Fuse capture+conversion with free photons: K1/H_A011 artificial-leaf.
+
+Promoted to 🜂 ABSTRACT cards (round 1): A4→H_A001, D1→H_A002, B4→H_A003, B2→H_A004, A2→H_A005,
+F1→H_A006, E2→H_A007, C1→H_A008. (round 2): H1→H_A009, J1→H_A010, K1→H_A011.
