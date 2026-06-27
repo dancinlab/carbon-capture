@@ -1,0 +1,47 @@
+{
+  "metrics": {
+    "floor_kj_mol": 19.274525137746224,
+    "compression_kj_mol": 11.86798630971421,
+    "ratio_to_floor": 0.6157343034341513,
+    "supercritical": true,
+    "nc_zero_ratio_work": 0.0,
+    "doubling_delta_kj_mol": 1.7182820757664832,
+    "expected_doubling_kj_mol": 1.7182820757664836
+  },
+  "falsifiers": [
+    {
+      "name": "F-011-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-011-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-011-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-011-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-011-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-011-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED"
+}

@@ -47,7 +47,7 @@ L6 HEXA-UNIVERSAL  planetary  — 36 hubs · 6 subsystems · 420 → 280 ppm in 
 
 A hypothesis-verification system (anima-parity) tests the spec's claims with deterministic,
 stdlib-only falsifiers — separating **real physics** from **n=6 numerology** without
-tune-to-green. 9 cards so far (each 6/6 falsifiers PASS):
+tune-to-green. 13 cards so far (each 6/6 falsifiers PASS):
 
 ```
 H_001 separation-floor      🟢 SUPPORTED   floor 19.275 kJ/mol, monotone in dilution
@@ -59,12 +59,19 @@ H_006 numerology-predictor  🟢 SUPPORTED   3/6 lattice→target identities phy
 H_007 chip-adc-resolution   🟢 SUPPORTED   12-bit ADC ~7 bits short of ppb sensing
 H_008 transmute-energy      🟢 SUPPORTED   CO₂→C reduction 20× capture floor; $1M/ton not Mt-scale
 H_009 planetary-scale       🟡 PARTIAL     100 Gt/yr mass-coherent; ~900 EJ/yr energy + ocean walls
+H_010 tsa-regeneration      🟢 SUPPORTED   sensible heat ~100 kJ/mol = the headroom mechanism
+H_011 sc-co2-compression    🟢 SUPPORTED   ~11.9 kJ/mol to 12 MPa (supercritical OK)
+H_012 sorbent-binding-opt   🟢 SUPPORTED   Sabatier optimum ~50 kJ/mol (coverage vs regen)
+H_013 plant-air-throughput  🟢 SUPPORTED   ~1.3e12 m³ air/yr at 1 Mt/yr (flue 286× less)
 ```
 
-Key finding: the genuine wins (separation floor, headroom, honeycomb) hold on physics that
-never invokes {2,4,12,24}; the lattice attaches equally clean identities to impossible targets
-(48 mmol/g, $24/ton, 12-bit→ppb, $1M/ton-at-scale, 100 Gt/yr). Every lattice-derived number
-must clear a physics bounds-check before becoming a goal (`ARCHITECTURE.json` → `convergence.records`).
+Two honest threads: (1) the **real physics** wins (floor, headroom + its sensible-heat
+mechanism, honeycomb, compression, binding optimum, air-handling) hold *without* invoking
+{2,4,12,24} — and they reframe the DAC walls as engineering/investment (working capacity, heat
+recovery, fan power), not thermodynamic ceilings. (2) The **n=6 numerology** attaches equally
+clean identities to impossible targets (48 mmol/g, $24/ton, 12-bit→ppb, $1M/ton-at-scale, 100
+Gt/yr) — so every lattice-derived number must clear a physics bounds-check first
+(`ARCHITECTURE.json` → `convergence.records`).
 
 - `HYPOTHESES/` — `REGISTRY.jsonl` + one rich card per hypothesis (`cards/H_*.md`).
 - `tool/carbon_capture.py` — shared deterministic harness (separation floor, headroom,

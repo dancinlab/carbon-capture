@@ -1,0 +1,55 @@
+{
+  "metrics": {
+    "theta": {
+      "20": 1.339976293656678e-06,
+      "30": 7.568137800016282e-05,
+      "40": 0.0042568996203168835,
+      "50": 0.19450586074248802,
+      "60": 0.9316910787707879,
+      "70": 0.9987036629630031
+    },
+    "theta_30_dac": 7.568137800016282e-05,
+    "theta_50_dac": 0.19450586074248802,
+    "theta_60_dac": 0.9316910787707879,
+    "monotone_increasing": true,
+    "all_in_unit_interval": true,
+    "theta_30_highP": 0.15269129491673844
+  },
+  "falsifiers": [
+    {
+      "name": "F-012-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-012-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-012-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-012-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-012-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-012-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = a Sabatier optimum exists: weak binding gives ~0 uptake at 400 ppm, strong binding fills but owes its E_ads back at regeneration; the usable window is ~45-55 kJ/mol."
+}
