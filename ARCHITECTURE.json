@@ -12,6 +12,13 @@
         "value": "Lattice-derived targets keep failing physics checks: 48 mmol/g (=J₂·φ) needs 211% CO₂ by sorbent mass (H_003); $24/ton (=J₂) below credible floors (H_004); σ=12-bit ADC is ~7 bits short of ppb sensing (H_007); $1M/ton graphene can't survive Mt-scale + CO₂→C reduction is 20× the capture floor (H_008); 100 Gt/yr (12-yr drawdown) needs ~900 EJ/yr > global primary energy (H_009). H_006: a physics-blind relabel matches the lattice just as well → decorative, not predictive.",
         "threshold": "every lattice-derived (φ=2·τ=4·σ=12·J₂=24) target must clear an independent physics bounds-check BEFORE it becomes a design goal; the lattice is a mnemonic, not a predictor.",
         "source": "state/n6-carbon-capture-spec.md"
+      },
+      {
+        "id": "imagination-is-not-novelty",
+        "state": "open",
+        "value": "A prior-art audit (state/novelty-check-2026-06-27.md) of the 11 SF-brainstorm mechanisms found 0/11 genuinely novel — all are pre-existing research fields (enhanced weathering, artificial leaf, electro-swing, biocement, vortex engine, CO₂ hydrate, photoswitchable MOFs) or known-dismissed ideas (centrifuge, radiative frost, laser, magnetic O₂). The divergence re-derived real science, which validates grounding but is NOT invention. The actual novel contribution is the unified falsifiable verification (one floor + net-negativity bar across all 11), not the ideas.",
+        "threshold": "before labelling any brainstormed concept 'novel', run a prior-art check (sidecar research); default assumption = it already exists. Sell the methodology/verification, not the idea.",
+        "source": "state/novelty-check-2026-06-27.md"
       }
     ]
   },
