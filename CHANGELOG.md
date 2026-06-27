@@ -2,6 +2,21 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — H_020: the NOVEL result with an overwhelming numerical edge (NNR figure of merit)
+
+- "수치상으로 압도적 우위 NOVEL" — since 0/11 mechanisms are new, the novelty is **methodological**:
+  - **H_020** nnr-figure-of-merit 🟢 SUPPORTED (7/7) — a unified cross-family figure of merit
+    **NNR-FoM = net CO₂ removed per ACTIVE GRID energy, on a realistic fossil grid (0.45 kgCO₂/kWh)**
+    that no single prior-art paper computes. First result is numerically **overwhelming**: on a
+    fossil grid, free-energy paths beat electric DAC (Gen3, 1500 kWh/ton) by **enhanced-weathering
+    13× · passive moisture-swing 44× · artificial-leaf 90×** on net-per-active-energy — because
+    electric DAC's net collapses to +0.32 (old 9 GJ rigs to −0.12, futile) while free-energy paths
+    are grid-independent. Honesty held by falsifier F-020-6: the gap shrinks to ~5× on a clean grid,
+    and it is the ENERGY axis only (DAC still wins on rate/footprint, see card Limits).
+- Harness +1 primitive `nnr_fom`. `REGISTRY.jsonl`: +1 (🟢; 31 lines). `ARCHITECTURE.json`:
+  `convergence.records[novel-is-the-method-not-the-mechanism]` + `thesis.energy-floor` updated
+  (electric DAC may not be the right path on a fossil grid); README lockstep.
+
 ## 2026-06-27 — novelty check: 0/11 SF mechanisms are actually new (prior-art audit)
 
 - "전부 NOVEL 체크" — prior-art audit (`state/novelty-check-2026-06-27.md`, via `sidecar research`)

@@ -435,6 +435,27 @@ def solar_area_for_carbon(mass_c_ton_yr: float, solar_to_fuel_eff: float,
     return energy_needed / (insolation_w_m2 * 3.1536e7)
 
 
+# --- cross-family figure of merit (H_020) -------------------------------------
+
+def nnr_fom(active_grid_kwh_per_ton: float, grid_intensity_kg_per_kwh: float = 0.45) -> dict:
+    """Net-Negativity-Robust figure of merit: net CO2 removed per unit of ACTIVE grid
+    energy, evaluated on a realistic (default fossil 0.45 kgCO2/kWh) grid — the metric
+    that makes electric DAC, enhanced weathering, the artificial leaf, and moisture-swing
+    directly comparable across mechanism-families (H_020).
+
+        net   = 1 - (active_grid_kwh * grid_intensity) / 1000   [ton net / ton processed]
+        NNR   = net / (active_grid_kwh * 3.6e-3)                [ton net / GJ active grid energy]
+
+    Free-energy paths (sunlight, ambient humidity, rock chemistry) draw little GRID energy,
+    so they keep a high net AND a small denominator -> they dominate electric DAC, whose net
+    collapses toward 0 on a dirty grid (H_014). Returns net and NNR (ton/GJ)."""
+    if active_grid_kwh_per_ton <= 0 or grid_intensity_kg_per_kwh < 0:
+        raise ValueError("active energy must be > 0 and intensity >= 0")
+    net = 1.0 - (active_grid_kwh_per_ton * grid_intensity_kg_per_kwh) / 1000.0
+    nnr = net / (active_grid_kwh_per_ton * 3.6e-3)
+    return {"net_fraction": net, "nnr_ton_per_gj": nnr, "active_kwh": active_grid_kwh_per_ton}
+
+
 # --- falsifier harness --------------------------------------------------------
 
 @dataclass

@@ -69,7 +69,15 @@ H_016 humidity-coload       🟢 SUPPORTED   air carries 37–170× more H₂O t
 H_017 reference-match       🟢 SUPPORTED   harness PREDICTS measured Mg-MOF-74 DAC data
 H_018 systems-ref-match     🟢 SUPPORTED   harness PREDICTS measured Gen3 energy/cost
 H_019 synthesis-frontier    🟢 SUPPORTED   frontier 12.3× ABOVE the 2nd-law floor (capstone)
+H_020 nnr-figure-of-merit   🟢 SUPPORTED   free-energy paths 13–90× over electric DAC (NOVEL metric)
 ```
+
+**The novel result (H_020):** since no *mechanism* is new, the novelty is a **method** — a unified
+cross-family figure of merit (net CO₂ per *active grid* energy on a realistic fossil grid). On it,
+free-energy paths overwhelmingly dominate electric DAC: **enhanced weathering 13×, passive
+moisture-swing 44×, artificial leaf 90×** — because electric DAC's net removal collapses on a dirty
+grid (H_014) while free-energy paths are grid-independent. Honest: the gap shrinks to ~5× on a clean
+grid, and it is the *energy* axis only (DAC still wins on rate/footprint).
 
 **Beyond the frontier (H_019 capstone):** composing every verified primitive into one total-energy
 model shows the current research best (Climeworks Gen3, 1500 kWh/ton) sits **12.3× above the
