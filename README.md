@@ -47,7 +47,7 @@ L6 HEXA-UNIVERSAL  planetary  — 36 hubs · 6 subsystems · 420 → 280 ppm in 
 
 A hypothesis-verification system (anima-parity) tests the spec's claims with deterministic,
 stdlib-only falsifiers — separating **real physics** from **n=6 numerology** without
-tune-to-green. First batch (6 cards, each 6/6 falsifiers PASS):
+tune-to-green. 9 cards so far (each 6/6 falsifiers PASS):
 
 ```
 H_001 separation-floor      🟢 SUPPORTED   floor 19.275 kJ/mol, monotone in dilution
@@ -56,13 +56,15 @@ H_003 sorbent-capacity      🟢 SUPPORTED   48 mmol/g = 211% sorbent mass → t
 H_004 cost-floor            🟡 PARTIAL     25× gap learnable; $24/ton endpoint optimistic
 H_005 honeycomb-geometry    🟢 SUPPORTED   hexagon = min-wall tiler (not the global min)
 H_006 numerology-predictor  🟢 SUPPORTED   3/6 lattice→target identities physically impossible
-                                           → the n=6 lattice is a label, not a predictor
+H_007 chip-adc-resolution   🟢 SUPPORTED   12-bit ADC ~7 bits short of ppb sensing
+H_008 transmute-energy      🟢 SUPPORTED   CO₂→C reduction 20× capture floor; $1M/ton not Mt-scale
+H_009 planetary-scale       🟡 PARTIAL     100 Gt/yr mass-coherent; ~900 EJ/yr energy + ocean walls
 ```
 
-Key finding: the genuine wins (separation floor, honeycomb) hold on physics that never
-invokes {2,4,12,24}; the lattice attaches equally clean identities to impossible targets
-(48 mmol/g, $24/ton). Every lattice-derived number must clear a physics bounds-check before
-becoming a goal (`ARCHITECTURE.json` → `convergence.records`).
+Key finding: the genuine wins (separation floor, headroom, honeycomb) hold on physics that
+never invokes {2,4,12,24}; the lattice attaches equally clean identities to impossible targets
+(48 mmol/g, $24/ton, 12-bit→ppb, $1M/ton-at-scale, 100 Gt/yr). Every lattice-derived number
+must clear a physics bounds-check before becoming a goal (`ARCHITECTURE.json` → `convergence.records`).
 
 - `HYPOTHESES/` — `REGISTRY.jsonl` + one rich card per hypothesis (`cards/H_*.md`).
 - `tool/carbon_capture.py` — shared deterministic harness (separation floor, headroom,
