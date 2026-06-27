@@ -73,7 +73,14 @@ H_020 nnr-figure-of-merit   🟢 SUPPORTED   free-energy paths 13–90× over el
 H_021 portfolio-no-winner   🟢 SUPPORTED   no path wins all 4 axes → removal is a portfolio
 H_022 dac-niche-concentrated 🟢 SUPPORTED  electric = point-source (flue 286× less air), not dilute air
 H_023 abatement-before-removal 🟢 SUPPORTED clean kWh displaces fossil first while grid > 0.67 kg/kWh
+H_024 two-frontiers         🟢 SUPPORTED   DAC leads MATURITY frontier, not EFFECTIVENESS frontier
 ```
+
+**"The impressive frontier was electric DAC, wasn't it?"** — yes, and H_024 shows why that's only
+half true: electric DAC leads the **engineering-maturity** frontier (most deployed, the 12.3× ladder
+H_017–H_019 validated) but **trails the effectiveness-per-active-energy frontier** on a fossil grid
+(argmax flips to the artificial leaf). H_017–H_019 measured maturity and over-broadly called it "the"
+frontier — an honest self-correction (their numbers stand). "Most advanced" ≠ "most effective now".
 
 **"Is electric DAC the right path?"** (the H_020 implication) → three verified answers: (H_021)
 no path dominates all of energy/rate/footprint/permanence, so it's a **portfolio** not a winner;

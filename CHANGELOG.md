@@ -2,6 +2,23 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — H_024: two frontiers (maturity ≠ effectiveness) + self-critique of H_017–H_019
+
+- The observation "the thing overwhelming at the frontier was ALSO electric DAC" turned into a
+  verified hypothesis + an honest self-correction:
+  - **H_024** two-frontiers 🟢 SUPPORTED (6/6) — electric DAC leads the **engineering-maturity**
+    frontier (most deployed; the 12.3× ladder to its floor that H_017–H_019 validated) but TRAILS the
+    **effectiveness-per-active-energy** frontier on a fossil grid (the argmax flips to the artificial
+    leaf, H_020). The two frontiers genuinely diverge (different rankings). H_017–H_019 measured
+    maturity and over-broadly labeled it "the" frontier — a framing bias this card corrects (their
+    numbers stand). "Most advanced" ≠ "most effective now".
+  - **Verdict-integrity note (honesty)**: run 1 was 5/6 — F-024-6 ("DAC closest to its own floor") was
+    ill-posed (DAC sits 12.3× ABOVE its floor, not close; shared 122 kWh floor wrong for non-separation
+    paths). The real maturity discriminator is TRL/deployment (F-024-1). Corrected to a
+    maturity-uniqueness check, re-run 6/6. Both runs documented in the card.
+- `REGISTRY.jsonl`: +1 (🟢; 35 lines). `ARCHITECTURE.json` `convergence` updated with the two-frontier
+  disambiguation; README lockstep.
+
 ## 2026-06-27 — H_021–H_023: "is electric DAC the right path?" — three verified answers
 
 - H_020's implication ("ask whether electric DAC is the right path before making it cleaner")

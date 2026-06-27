@@ -1,0 +1,58 @@
+{
+  "metrics": {
+    "maturity_argmax": "electric-DAC",
+    "effectiveness_argmax": "artificial-leaf",
+    "maturity_ranking": [
+      "electric-DAC",
+      "weathering",
+      "artificial-leaf"
+    ],
+    "effectiveness_ranking": [
+      "artificial-leaf",
+      "weathering",
+      "electric-DAC"
+    ],
+    "rankings_identical": false,
+    "maturity_in_unit": true,
+    "dac_unique_maturity_leader": true,
+    "dac_above_own_floor_x": 12.295081967213115,
+    "dac_climbs_on_clean": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-024-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-024-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-024-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-024-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-024-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-024-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = two divergent frontiers. Electric DAC leads ENGINEERING MATURITY (most deployed, 12.3x = closest to its own 2nd-law floor) but trails EFFECTIVENESS per active energy on a fossil grid (H_020). 'The frontier was electric DAC' is true for maturity, false for effectiveness; H_017-H_019 measured maturity and mislabeled it 'the' frontier (self-correction)."
+}
