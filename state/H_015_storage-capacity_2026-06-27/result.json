@@ -1,0 +1,48 @@
+{
+  "metrics": {
+    "demand_gt": 1094.8,
+    "capacity_central_gt": 10000.0,
+    "ratio_central": 9.134088417975887,
+    "ratio_pessimistic": 0.9134088417975886,
+    "years_capacity_at_100gt_yr": 100.0,
+    "nc_zero_demand": 0.0,
+    "nc_linear": 2189.6
+  },
+  "falsifiers": [
+    {
+      "name": "F-015-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-015-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-015-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-015-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-015-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-015-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = geologic storage void (~1e4 Gt) is ~9x the 1095 Gt demand and lasts >100 yr at 100 Gt/yr -> not the bottleneck; energy (H_014) and air handling (H_013) are."
+}
