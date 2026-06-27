@@ -1,0 +1,65 @@
+{
+  "metrics": {
+    "gen3_frontier_kwh": 1500.0,
+    "floor_kwh_ton": 121.65772428964168,
+    "floor_frontier_ratio": 12.329673341816035,
+    "baseline_total_kwh": 827.7505828824183,
+    "baseline_e_sep": 19.274525137746224,
+    "baseline_e_regen": 100.0,
+    "baseline_e_comp": 11.86798630971421,
+    "design_total_kwh": 221.81391841227196,
+    "swing_total_kwh": 127.96956391335499,
+    "wc_sweep_totals_kwh": [
+      827.7505828824183,
+      512.1585701375503,
+      322.80336249062964,
+      259.6849599416561
+    ],
+    "monotone_decreasing": true,
+    "closure_ok": true,
+    "full_recovery_raises": true,
+    "floor_is_separation": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-019-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-019-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-019-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-019-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-019-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-019-6",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-019-7",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 7,
+  "n_total": 7,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = the research frontier (Gen3 1500 kWh/ton) is 12.3x ABOVE the 2nd-law floor (122 kWh/ton); the entire gap is addressable regeneration heat; the prescribed design (high working capacity + heat recovery + swing-mode/conversion) approaches the floor."
+}

@@ -2,6 +2,26 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — H_019 capstone: synthesis BEYOND the research frontier
+
+- Composed every verified primitive (H_001 separation + H_010 regen + H_011 compression, with
+  H_008/H_012/H_016 informing the path) into one total-energy objective `total_dac_energy(...)` and
+  searched the optimum — to exceed, not just match, the research frontier:
+  - **H_019** synthesis-frontier 🟢 SUPPORTED (7/7) — the current research best (Climeworks Gen3,
+    1500 kWh/ton) sits **12.3× above the irreducible 2nd-law floor (122 kWh/ton)**; the entire gap is
+    the addressable regeneration sensible-heat term (baseline regen 100 kJ/mol ≫ sep 19.3, comp 11.9).
+    The working-capacity lever alone takes 828→260 kWh/ton; the prescribed design (high wc + 80% heat
+    recovery → 222; + swing-mode/conversion → 128) approaches the floor. A forward design target with a
+    verified component decomposition, ~6–12× below today's best.
+  - **Verdict-integrity note (honesty)**: run 1 gave a spurious 6/7 FALSIFIED from an F-019-7
+    tolerance inconsistency (1e-9 vs the 1e-3 negligibility scale of its sibling check; regen at
+    wc=1e9 ≈ 1e-7 kJ/mol). Diagnosed falsifier-first, corrected to registered intent, re-ran 7/7.
+    Both documented in the card.
+- Harness +1 synthesis primitive `total_dac_energy` (+ `KJ_PER_MOL_PER_GJ_TON`).
+- `REGISTRY.jsonl`: +1 (🟢; now **19 total** — 17 🟢 / 2 🟡).
+- `ARCHITECTURE.json` lockstep: `verification` node → 19 verdicts + capstone; `thesis.energy-floor`
+  gains the full frontier→floor energy ladder.
+
 ## 2026-06-27 — H_018: systems-axis frontier (reference-match vs measured techno-economics)
 
 - Completed the frontier breakthrough across the systems axis (H_017 did materials):

@@ -68,7 +68,15 @@ H_015 storage-capacity      🟢 SUPPORTED   void ~9× demand → not the bottle
 H_016 humidity-coload       🟢 SUPPORTED   air carries 37–170× more H₂O than CO₂
 H_017 reference-match       🟢 SUPPORTED   harness PREDICTS measured Mg-MOF-74 DAC data
 H_018 systems-ref-match     🟢 SUPPORTED   harness PREDICTS measured Gen3 energy/cost
+H_019 synthesis-frontier    🟢 SUPPORTED   frontier 12.3× ABOVE the 2nd-law floor (capstone)
 ```
+
+**Beyond the frontier (H_019 capstone):** composing every verified primitive into one total-energy
+model shows the current research best (Climeworks Gen3, 1500 kWh/ton) sits **12.3× above the
+irreducible thermodynamic floor (122 kWh/ton)** — and the *entire* gap is the addressable
+regeneration sensible-heat term. The synthesis prescribes the route to the floor: high working
+capacity + heat recovery (→222) + swing-mode/conversion path (→128 kWh/ton). A forward design
+target with a verified component decomposition, ~6–12× below today's best.
 
 **Closed-form harness exhausted at H_016** (16 cards: 14 🟢 / 2 🟡). Every spec claim numerically
 falsifiable from thermodynamics/arithmetic at $0 is covered. A *실측전 research* literature pass
