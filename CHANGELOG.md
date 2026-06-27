@@ -2,6 +2,22 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — novelty check: 0/11 SF mechanisms are actually new (prior-art audit)
+
+- "전부 NOVEL 체크" — prior-art audit (`state/novelty-check-2026-06-27.md`, via `sidecar research`)
+  of every H_A00N concept. Honest headline: **0 / 11 mechanisms are genuinely novel** — all are
+  pre-existing research fields or known-dismissed ideas:
+  - established fields: A005 atmospheric-vortex engine (Michaud/AVEtec), A006 electro-swing
+    (Voskian-Hatton MIT 2019; Berlinguette 2019), A007 biocement/CA-concrete, A008 photoswitchable
+    MOFs, A009 CO₂-hydrate capture, A010 enhanced rock weathering (mERW LCA papers), A011 artificial leaf.
+  - known-dismissed: A001 gas-centrifuge, A002 radiative frost, A003 IR-laser dissociation, A004 magnetic O₂.
+  - The divergence re-derived real science (validates grounding, NOT invention). The genuine novel
+    contribution is the **unified falsifiable verification** — one floor + net-negativity bar across
+    all 11 — and the cross-comparable kernel numbers, not the ideas.
+- `ARCHITECTURE.json`: added `convergence.records[imagination-is-not-novelty]` (prior-art-check before
+  claiming novelty; sell the methodology, not the idea). Tool-confirmed A006/A010/A011 this pass; the
+  other 8 are established by domain knowledge (fresh citations rate-limited — flagged honestly).
+
 ## 2026-06-27 — 모두 검증: graduate all 11 🜂 ABSTRACT cards by running their kernels
 
 - Ran every H_A00N imagination card's pre-registered falsifiable kernel deterministically (one DRY
