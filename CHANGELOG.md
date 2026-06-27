@@ -2,6 +2,22 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — 🜂 ABSTRACT brainstorm round 2 (H_A009–H_A011): 4 more orthogonal families → dry
+
+- break-walls correction: the round-1 "dry at 7 families" was premature. Re-enumeration adds 4
+  genuinely orthogonal grabbing-principles → 11 families, ~35 concepts, now dry at the principle level
+  (further ideas recombine: plasma-catalysis = EM×photo, thermoacoustic = acoustic×thermal, etc.):
+  - **Phase-trapping** (H) → `H_A009` sky-clathrate — CO₂ caged in a water-ice lattice; phase boundary
+    selects, but 400-ppm formation pressure likely needs pre-concentration (storage-phase viable).
+  - **Geochemical** (J) → `H_A010` fast-weather — milled olivine/basalt accelerates the natural
+    silicate→carbonate thermostat; permanence built-in, milling CO₂ is the net-negativity check (H_014).
+  - **Artificial photosynthesis** (K) → `H_A011` artificial-leaf — sunlight + water reduce CO₂ to fuel,
+    fusing capture + conversion (H_008); area not energy is the cost.
+  - Also surveyed (not carded): membrane/barrier (I, zero-cycle separation), ocean alkalinity, abyss-ice
+    storage, electro-microbe.
+- `REGISTRY.jsonl`: +3 (🜂 ABSTRACT; now 30 lines = 19 verified H_0xx + 11 abstract H_A).
+- `ARCHITECTURE.json`: `HYPOTHESES.abstract` node updated to 11 families / 11 cards.
+
 ## 2026-06-27 — 🜂 ABSTRACT track: SF-divergent brainstorm (H_A001–H_A008)
 
 - Divergent science-fiction ideation OUTSIDE the conventional MOF/amine/DAC stack, kept
