@@ -66,6 +66,7 @@ H_013 plant-air-throughput  🟢 SUPPORTED   ~1.3e12 m³ air/yr at 1 Mt/yr (flue
 H_014 net-negativity        🟢 SUPPORTED   fossil grid futile; breakeven 0.40 kgCO₂/kWh
 H_015 storage-capacity      🟢 SUPPORTED   void ~9× demand → not the bottleneck
 H_016 humidity-coload       🟢 SUPPORTED   air carries 37–170× more H₂O than CO₂
+H_017 reference-match       🟢 SUPPORTED   harness PREDICTS measured Mg-MOF-74 DAC data
 ```
 
 **Closed-form harness exhausted at H_016** (16 cards: 14 🟢 / 2 🟡). Every spec claim numerically
@@ -75,7 +76,14 @@ justifies no expensive compute**: Climeworks' own 2030 target (~$250–350/ton c
 spec's $24/ton (validates H_004); arXiv:2501.04825 derives the same thermodynamic CO₂/energy bound
 across 11,660 MOFs (validates H_010/H_012); moisture-swing DAC confirms H_016's water-as-resource
 limit. The remaining gaps (real sorbent uptake, cycle-life, bottom-up CAPEX) are **$0
-data-ingestion of public datasets**, not new compute — the `H_017+` entry point if pursued.
+data-ingestion of public datasets**, not new compute.
+
+**Frontier crossed (H_017):** that data-ingestion step is now done — H_017 feeds *measured*
+anchors (Mg-MOF-74 binding 34.3 kJ/mol; bare <1 vs amine >1 mmol/g at 400 ppm; 3.67 mmol/g at
+flue) and the closed-form harness **predicts them from first principles** (θ≈4e-4 at DAC vs ≈0.09
+at flue; 48 mmol/g = 24× measured best). The self-contained floors are now validated against
+measured data. The next frontier (H_018+, still $0 data-ingestion) is per-sorbent
+kinetics/cycle-life/CAPEX from techno-economic papers; expensive DFT/GPU remains unjustified.
 
 Two honest threads: (1) the **real physics** wins (floor, headroom + its sensible-heat
 mechanism, honeycomb, compression, binding optimum, air-handling) hold *without* invoking

@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "predicted_theta_dac_400ppm": 0.00042870947460530817,
+    "predicted_theta_flue_0p1bar": 0.09265569829697946,
+    "flue_over_dac_ratio": 216.12701324663522,
+    "spec48_over_measured_best": 24.0,
+    "measured_mass_fraction_g_g": 0.088018
+  },
+  "falsifiers": [
+    {
+      "name": "F-017-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-017-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-017-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-017-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-017-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-017-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = the closed-form harness PREDICTS measured DAC reality: bare Mg-MOF-74 (34.3 kJ/mol) is predicted to fail at 400 ppm yet work at flue, matching measured <1 vs 3.67 mmol/g; and 48 mmol/g is ~24x measured best uptake. Frontier crossed: self-contained thermodynamics -> literature-anchored prediction."
+}
