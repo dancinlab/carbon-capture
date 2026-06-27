@@ -69,10 +69,13 @@ H_016 humidity-coload       🟢 SUPPORTED   air carries 37–170× more H₂O t
 ```
 
 **Closed-form harness exhausted at H_016** (16 cards: 14 🟢 / 2 🟡). Every spec claim numerically
-falsifiable from thermodynamics/arithmetic at $0 is covered. What remains — sorbent
-kinetics/mass-transfer, cycle-life degradation, MOF screening (DFT), bottom-up CAPEX — needs
-**real measurement**, gated behind the repo's *실측전 research* rule (a literature pass before
-spending on DFT/screening/GPU). Those become `H_017+` only after research justifies the spend.
+falsifiable from thermodynamics/arithmetic at $0 is covered. A *실측전 research* literature pass
+(`state/research-pass-2026-06-27.md`) over the remaining questions **confirms the harness and
+justifies no expensive compute**: Climeworks' own 2030 target (~$250–350/ton captured) is ~10× the
+spec's $24/ton (validates H_004); arXiv:2501.04825 derives the same thermodynamic CO₂/energy bound
+across 11,660 MOFs (validates H_010/H_012); moisture-swing DAC confirms H_016's water-as-resource
+limit. The remaining gaps (real sorbent uptake, cycle-life, bottom-up CAPEX) are **$0
+data-ingestion of public datasets**, not new compute — the `H_017+` entry point if pursued.
 
 Two honest threads: (1) the **real physics** wins (floor, headroom + its sensible-heat
 mechanism, honeycomb, compression, binding optimum, air-handling) hold *without* invoking
