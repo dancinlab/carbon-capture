@@ -3,8 +3,8 @@ id: H_A007
 slug: breathing-stone
 title: 🜂 ABSTRACT — living building materials (carbonic-anhydrase + cyanobacteria) that turn every wall and road into a passive CO₂→carbonate sink; cities as the contactor
 domain: system
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: partial
+tier: 🟡 PARTIAL (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + enzyme-turnover × surface-area kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -33,7 +33,14 @@ uptake) and material durability** — predict it caps at a thin surface layer un
 Distributes capture into infrastructure that already exists — no L4 plant, no L2 reactor. The contactor
 is the city. Orthogonal to the entire engineered-plant stack.
 
-## Honest status
+## Verdict
+
+**🟡 PARTIAL** — graduated by running the kernel. Urban-surface areal ceiling = **4–36 Gt/yr** (same
+order as the H_009 target) IF every surface participated — so the *scale* is not the kill. The real cap
+is **carbonate-crust saturation + material durability**, which limit it to a thin self-renewing layer.
+Scale-plausible, durability-bound. Artifact: `result_H_A007.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination. No run, no verdict. The areal-rate × durability kernel is the thing to model; pairs with
 the echoes "Concrete + Carbon n=6 Mineralization" cross-link already in `state/`. Promote if run.

@@ -104,9 +104,11 @@ Gt/yr) — so every lattice-derived number must clear a physics bounds-check fir
 (`ARCHITECTURE.json` → `convergence.records`).
 
 - `HYPOTHESES/` — `REGISTRY.jsonl` + one rich card per hypothesis (`cards/H_*.md`). The verified
-  `H_0xx` chain (19 cards) is kept tier-separated from a 🜂 ABSTRACT `H_A*` track (11 cards) — SF-divergent
-  imagination across 11 orthogonal grabbing-principle families with falsifiable kernels but **no
-  run/verdict** (`state/sf-brainstorm-2026-06-27.md`).
+  `H_0xx` verified chain (19) + a graduated `H_A*` track (11 SF-origin cards whose falsifiable kernels
+  were **all run** — 모두 검증 — landing 2 🟢 / 3 🟡 / 6 🔴). The 6 negatives (centrifuge KE 644× floor,
+  CO₂ frost −143°C, laser bond 28× floor, gas-phase O₂ magnet, naive photoswitch, air-clathrate) are the
+  negative space; survivors: enhanced weathering + artificial leaf (🟢), vortex/electro-swing/breathing
+  concrete (🟡). Full landscape in `state/sf-brainstorm-2026-06-27.md`.
 - `tool/carbon_capture.py` — shared deterministic harness (separation floor, headroom,
   gravimetric bound, honeycomb P/√A, falsifier ledger).
 - `state/H_*/` — per-hypothesis run script + `result.json`.

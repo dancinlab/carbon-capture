@@ -3,8 +3,8 @@ id: H_A010
 slug: fast-weather
 title: 🜂 ABSTRACT — enhanced rock weathering: milled olivine/basalt accelerates the planet's natural silicate→carbonate thermostat; permanence is built-in, milling CO₂ is the net-negativity check
 domain: system
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: supported
+tier: 🟢 SUPPORTED (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + weathering-rate × net-negativity kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -34,7 +34,14 @@ grid (NET-positive), more on a dirty one (could go futile). Kill criterion: diss
 Uses the planet's own carbon thermostat sped up — a geochemical axis orthogonal to every engineered
 level; storage and capture are the same irreversible reaction.
 
-## Honest status
+## Verdict
+
+**🟢 SUPPORTED** — graduated by running the kernel. Milling olivine (~300 kWh/ton) is small vs capture,
+so net removal = **+0.98 (clean grid) and +0.86 even on a dirty 0.45 kg/kWh grid** → **robustly
+net-negative** (unlike electric DAC, H_014, which goes futile on a fossil grid). The real caveat is the
+**decadal weathering RATE** (grain-size-limited), not the energy. Artifact: `result_H_A010.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination/conjecture (enhanced weathering is a real, active field; the SF leap is planetary-scale
 deployment). No run, no verdict. The rate × net-negativity kernel decides it. Promote if modeled.

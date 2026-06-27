@@ -340,6 +340,101 @@ def total_dac_energy(
     }
 
 
+# --- 🜂 ABSTRACT-track kernels (deterministic graduation of imagination cards) ---
+
+M_AIR = 0.02896          # kg/mol, mean molar mass of air
+MU0 = 4.0e-7 * math.pi   # vacuum permeability (T·m/A)
+EV_KJ_MOL = 96.485       # 1 eV/molecule = 96.485 kJ/mol
+F_FARADAY = 96485.0      # C/mol
+
+
+def ev_to_kj_mol(ev: float) -> float:
+    """Convert per-molecule eV to kJ/mol (× 96.485). Photon/bond energies (H_A003/A008)."""
+    return ev * EV_KJ_MOL
+
+
+def centrifuge_separation_factor(delta_m_kg_mol: float, rim_speed_m_s: float,
+                                 temp_k: float = 298.15) -> float:
+    """Gas-centrifuge per-stage separation factor by molecular mass (H_A001):
+        alpha = exp(delta_M * v^2 / (2 R T)).
+    CO2/N2: delta_M=16e-3, v=600 -> ~3.2. Mass-selective, sorbent-free."""
+    if delta_m_kg_mol <= 0 or rim_speed_m_s <= 0 or temp_k <= 0:
+        raise ValueError("inputs must be > 0")
+    return math.exp(delta_m_kg_mol * rim_speed_m_s ** 2 / (2.0 * R_GAS * temp_k))
+
+
+def centrifuge_kinetic_energy_per_mol_co2(rim_speed_m_s: float, x_co2: float = 420e-6,
+                                          m_air_kg_mol: float = M_AIR) -> float:
+    """Kinetic energy to spin the air that carries one mole of CO2, per mole CO2 (H_A001):
+        E = (0.5 * M_air * v^2) / x_co2        [J/mol CO2]
+    The throughput-energy wall: at v=600 m/s, 400 ppm this is ~1.2e7 J/mol = ~640x the floor."""
+    if not (0.0 < x_co2 < 1.0) or rim_speed_m_s <= 0:
+        raise ValueError("invalid inputs")
+    return (0.5 * m_air_kg_mol * rim_speed_m_s ** 2) / x_co2
+
+
+def clausius_clapeyron_temp(p_target_pa: float, dh_j_mol: float,
+                            t_ref_k: float, p_ref_pa: float) -> float:
+    """Phase-line temperature at p_target from a reference point (H_A002 frost, H_A009 hydrate):
+        1/T = 1/T_ref - (R/dH) * ln(p_target/p_ref).
+    CO2 frost at its 400-ppm partial pressure lands ~130 K (-143 C)."""
+    if p_target_pa <= 0 or p_ref_pa <= 0 or dh_j_mol <= 0 or t_ref_k <= 0:
+        raise ValueError("invalid inputs")
+    inv_t = 1.0 / t_ref_k - (R_GAS / dh_j_mol) * math.log(p_target_pa / p_ref_pa)
+    if inv_t <= 0:
+        raise ValueError("non-physical temperature")
+    return 1.0 / inv_t
+
+
+def magnetic_thermal_ratio(chi_vol_si: float, b_tesla: float,
+                           pressure_pa: float = 101325.0) -> float:
+    """Ratio of magnetic energy density to thermal/pressure energy density for a gas (H_A004):
+        (chi * B^2 / (2 mu0)) / P.
+    Gas-phase O2 at 10 T gives ~1e-3 — magnetic sorting is overwhelmed by thermal motion."""
+    if pressure_pa <= 0:
+        raise ValueError("pressure must be > 0")
+    return (chi_vol_si * b_tesla ** 2 / (2.0 * MU0)) / pressure_pa
+
+
+def fan_work_per_ton(air_vol_m3_per_ton: float, delta_p_pa: float) -> float:
+    """Ideal fan work to push the contactor air for one ton CO2 (H_A005):
+        W = volume * delta_P        [J/ton CO2].
+    At ~1.3e6 m3/ton and a low 100 Pa open-mesh drop this is ~0.13 GJ/ton — small if delta_P is low."""
+    if air_vol_m3_per_ton < 0 or delta_p_pa < 0:
+        raise ValueError("inputs must be >= 0")
+    return air_vol_m3_per_ton * delta_p_pa
+
+
+def electrochem_energy_per_mol(electrons_per_co2: float, cell_voltage_v: float) -> float:
+    """Electrochemical energy per mole CO2 (H_A006 electro-swing):
+        E = n * V * F        [J/mol]. 1-2 e-/CO2 at 0.5-1.0 V -> ~48-193 kJ/mol (amine-TSA band)."""
+    if electrons_per_co2 < 0 or cell_voltage_v < 0:
+        raise ValueError("inputs must be >= 0")
+    return electrons_per_co2 * cell_voltage_v * F_FARADAY
+
+
+def areal_capture_ceiling_gt_yr(rate_g_m2_day: float, area_m2: float) -> float:
+    """Annual capture ceiling from an areal rate over a deployed area (H_A007/A010):
+        Gt/yr = rate[g/m2/day] * area[m2] * 365 / 1e15."""
+    if rate_g_m2_day < 0 or area_m2 < 0:
+        raise ValueError("inputs must be >= 0")
+    return rate_g_m2_day * area_m2 * 365.0 / 1e15
+
+
+def solar_area_for_carbon(mass_c_ton_yr: float, solar_to_fuel_eff: float,
+                          insolation_w_m2: float = 200.0,
+                          reduction_j_per_ton_c: float = None) -> float:
+    """Land area to photo-reduce a given carbon mass per year (H_A011 artificial leaf):
+        area = (mass_C * E_reduction / eff) / (insolation * seconds_per_year)   [m^2].
+    Energy is free sunlight, so AREA is the binding cost."""
+    if reduction_j_per_ton_c is None:
+        reduction_j_per_ton_c = carbon_reduction_energy_floor()
+    if not (0.0 < solar_to_fuel_eff <= 1.0) or insolation_w_m2 <= 0 or mass_c_ton_yr < 0:
+        raise ValueError("invalid inputs")
+    energy_needed = mass_c_ton_yr * reduction_j_per_ton_c / solar_to_fuel_eff
+    return energy_needed / (insolation_w_m2 * 3.1536e7)
+
+
 # --- falsifier harness --------------------------------------------------------
 
 @dataclass

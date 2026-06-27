@@ -1,0 +1,24 @@
+{
+  "metrics": {
+    "fan_gj_ton_100pa": 0.1306,
+    "fan_gj_ton_1000pa": 1.306,
+    "fan_kwh_ton_100pa": 36.27777777777778
+  },
+  "falsifiers": [
+    {
+      "name": "A005-low-dp-cheap",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "A005-hi-dp-wall",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 2,
+  "n_total": 2,
+  "all_pass": true,
+  "verdict": "PARTIAL",
+  "summary": "air-moving work at a low 100 Pa open-mesh drop = 0.13 GJ/ton (36 kWh/ton) \u2014 small enough for a solar vortex to supply IF dP stays low; residence-time vs dP is the open risk"
+}

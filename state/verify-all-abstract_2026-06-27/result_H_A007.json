@@ -1,0 +1,18 @@
+{
+  "metrics": {
+    "ceiling_gt_yr_low": 3.65,
+    "ceiling_gt_yr_high": 36.5
+  },
+  "falsifiers": [
+    {
+      "name": "A007-scale",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 1,
+  "n_total": 1,
+  "all_pass": true,
+  "verdict": "PARTIAL",
+  "summary": "urban-surface areal ceiling = 4-36 Gt/yr (same order as the H_009 target) IF every surface participated \u2014 but carbonate-crust saturation and durability cap it at a thin self-renewing layer"
+}

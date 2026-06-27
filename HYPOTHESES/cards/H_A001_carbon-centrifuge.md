@@ -3,8 +3,8 @@ id: H_A001
 slug: carbon-centrifuge
 title: 🜂 ABSTRACT — gas-centrifuge separation of CO₂ by molecular mass (44 vs 28/32), ~7 stages to concentrate from 400 ppm, but throughput energy is the wall
 domain: process
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: falsified
+tier: 🔴 FALSIFIED (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + closed-form separation-factor kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -33,7 +33,14 @@ Coriolis) supplies the rotation for free.
 The whole verified chain separates by *chemistry* (binding energy, H_012). This separates by
 *mass alone* — an axis no sorbent uses, immune to humidity (H_016) and degradation.
 
-## Honest status
+## Verdict
+
+**🔴 FALSIFIED** — graduated by running the kernel (`state/verify-all-abstract_2026-06-27/`). Separation
+is easy (α≈3.2/stage, ~7 stages to near-pure) but the kinetic energy to spin the air carrying one mole
+of CO₂ is **12,411 kJ/mol = 644× the 19.3 kJ/mol floor** → impractical for DAC. Clean negative-space:
+reinforces that air-handling (H_013) is the real wall. Artifact: `result_H_A001.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination. No run, no verdict. The kernel suggests separation is easy but throughput energy
 kills it on Earth — a clean negative-space result that reinforces why air-handling (H_013) is the

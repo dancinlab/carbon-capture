@@ -1,0 +1,23 @@
+{
+  "metrics": {
+    "net_clean_grid": 0.985,
+    "net_dirty_grid": 0.865
+  },
+  "falsifiers": [
+    {
+      "name": "A010-futile-clean",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "A010-futile-dirty",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 2,
+  "n_total": 2,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "summary": "milling olivine (~300 kWh/ton) is small vs capture -> net removal = +0.98 (clean grid) and +0.86 even on a dirty grid -> robustly net-negative; the real caveat is the decadal weathering RATE, not the energy"
+}

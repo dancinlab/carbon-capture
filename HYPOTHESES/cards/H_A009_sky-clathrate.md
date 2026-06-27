@@ -3,8 +3,8 @@ id: H_A009
 slug: sky-clathrate
 title: 🜂 ABSTRACT — capture CO₂ by forming a selective clathrate hydrate (CO₂ caged in water ice); phase boundary does the selecting, but 400-ppm formation pressure likely needs pre-concentration
 domain: process
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: falsified
+tier: 🔴 FALSIFIED (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + hydrate-stability kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -32,7 +32,14 @@ is attractive. Vindicated as a *storage* phase even if not a *capture* phase.
 Separation/storage by a *phase boundary*, not a sorbent surface (H_012) or a geologic seal (H_015) —
 a crystallization axis untouched by the chain.
 
-## Honest status
+## Verdict
+
+**🔴 FALSIFIED** (air-capture) — graduated by running the kernel. CO₂ hydrate stability at the 400-ppm
+partial pressure needs ~**−74 °C** → a clathrate cannot form directly from ambient air without
+pre-concentration. The *capture-from-air* path is refuted; the **storage phase** (post-concentration
+hydrate / abyss-ice) remains viable. Artifact: `result_H_A009.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination. No run, no verdict. Kernel splits it: capture-from-air likely NEGATIVE, storage likely
 viable. Promote to H_0xx only if the hydrate stability line is actually computed.

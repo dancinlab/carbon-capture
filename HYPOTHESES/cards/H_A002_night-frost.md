@@ -3,8 +3,8 @@ id: H_A002
 slug: night-frost
 title: 🜂 ABSTRACT — passive radiative-cooling CO₂ frost capture, powered by the cold of deep space (likely falsified-in-principle — frost point too low)
 domain: process
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: falsified
+tier: 🔴 FALSIFIED (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + Clausius-Clapeyron frost-point kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -33,7 +33,14 @@ pre-cooling (then it is no longer passive/free).
 Uses *cold from space* as the separation driver instead of a sorbent or compressor — a thermal axis
 orthogonal to everything verified.
 
-## Honest status
+## Verdict
+
+**🔴 FALSIFIED** — graduated by running the kernel. CO₂ frost point at its 400-ppm partial pressure
+(Clausius-Clapeyron) = **−143 °C**, **93 K below** the ~−50 °C floor of passive radiative cooling →
+cannot freeze CO₂ from ambient air passively. The frost-point bound that rules out naïve "just freeze
+it" schemes. Artifact: `result_H_A002.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination. No run, no verdict. The kernel already points to a clean NEGATIVE — useful as the
 frost-point bound that rules out naïve "just freeze it out of the air" schemes. Honest negative-space.

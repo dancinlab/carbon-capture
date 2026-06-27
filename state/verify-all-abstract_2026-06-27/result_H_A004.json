@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "mag_thermal_ratio_10T": 0.0007461001526637088
+  },
+  "falsifiers": [
+    {
+      "name": "A004-sortable",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 1,
+  "n_total": 1,
+  "all_pass": true,
+  "verdict": "FALSIFIED",
+  "summary": "gas-phase O2 magnetic/thermal energy ratio at 10 T = 7.5e-04 (~10^3x too weak) -> magnetic sorting overwhelmed by thermal motion; works only for condensed O2"
+}

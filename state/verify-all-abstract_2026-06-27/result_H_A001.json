@@ -1,0 +1,25 @@
+{
+  "metrics": {
+    "alpha_per_stage": 3.1956129361174233,
+    "stages_to_pure": 6.699402044413456,
+    "ke_kj_mol": 12411.42857142857,
+    "ke_over_floor": 643.9291491089799
+  },
+  "falsifiers": [
+    {
+      "name": "A001-viable",
+      "triggered": true,
+      "status": "FAIL"
+    },
+    {
+      "name": "A001-sep-ok",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 1,
+  "n_total": 2,
+  "all_pass": false,
+  "verdict": "FALSIFIED",
+  "summary": "separation easy (alpha=3.2, ~7 stages) but air-spin KE = 12411 kJ/mol = 644x the floor -> impractical for DAC"
+}

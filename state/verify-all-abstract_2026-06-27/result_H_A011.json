@@ -1,0 +1,18 @@
+{
+  "metrics": {
+    "area_m2": 51943231.810887374,
+    "area_km2": 51.943231810887376
+  },
+  "falsifiers": [
+    {
+      "name": "A011-area-absurd",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 1,
+  "n_total": 1,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "summary": "land area to photo-reduce 1 Mt-C/yr at 10% solar-to-fuel = 52 km2 -> energetically free (sunlight); the binding constraint is AREA + catalyst durability, NOT energy (the opposite trade from electric DAC)"
+}
