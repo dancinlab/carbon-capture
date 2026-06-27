@@ -1,0 +1,49 @@
+{
+  "metrics": {
+    "reduction_floor_gj_per_ton_c": 32.76163516776288,
+    "reduction_floor_gj_per_ton_co2": 8.941352905087596,
+    "capture_floor_gj_per_ton_co2": 0.4379678051704475,
+    "ratio_reduction_to_capture_floor": 20.415548356591685,
+    "revenue_usd_yr": 1000000000000.0,
+    "market_ratio": 1000.0,
+    "nc_linear_scaling_ok": true,
+    "zero_dhf_raises": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-008-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-008-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-008-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-008-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-008-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-008-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED here = conversion is energy-dominant (~20x the capture floor) and $1M/ton cannot survive Mt-scale (~1000x the current market) \u2014 the 'free value bonus' reading is refuted."
+}

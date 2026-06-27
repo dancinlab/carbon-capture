@@ -1,0 +1,47 @@
+{
+  "metrics": {
+    "required_bits": 18.68002980232821,
+    "bit_deficit_vs_12": 6.68002980232821,
+    "coarsest_step_ppb_at_12bit": 102.5390625,
+    "feasible_span_ppm_at_12bit": 4.096,
+    "nc_full_scale_bits": 0.0,
+    "nc_half_step_bits": 1.0
+  },
+  "falsifiers": [
+    {
+      "name": "F-007-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-007-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-007-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-007-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-007-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-007-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED here = the '12-bit ADC -> ppb over ambient' claim is refuted; ppb needs ~19 bits or a ~100x narrower span."
+}

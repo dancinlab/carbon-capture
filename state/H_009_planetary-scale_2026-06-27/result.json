@@ -1,0 +1,49 @@
+{
+  "metrics": {
+    "gross_gt_co2": 1094.8,
+    "gross_rate_gt_yr": 91.23333333333333,
+    "energy_real_ej_yr": 900.0,
+    "energy_floor_ej_yr": 43.796780517044745,
+    "global_primary_ej_yr": 600.0,
+    "net_rate_with_ocean_gt_yr": 182.46666666666667,
+    "nc_linear_ok": true,
+    "zero_ppm_gt": 0.0
+  },
+  "falsifiers": [
+    {
+      "name": "F-009-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-009-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-009-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-009-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-009-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-009-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "PARTIAL",
+  "interpretation": "Mass balance coherent (~91 Gt/yr matches ~100 Gt/yr claim); but real-DAC energy (~900 EJ/yr) exceeds global primary energy and ocean re-equilibration needs ~2x more -> PARTIAL, gated on the H_001/H_002 efficiency thesis."
+}

@@ -21,6 +21,17 @@ R_GAS = 8.314462618
 # Molar mass of CO2 (g/mol) — used for gravimetric uptake <-> mass-fraction conversion.
 M_CO2 = 44.009
 
+# Molar mass of carbon (g/mol).
+M_C = 12.011
+
+# Standard enthalpy of formation of CO2 from graphite + O2 (J/mol, magnitude). The
+# reverse (CO2 -> C(graphite) + O2) costs at least this much — the thermodynamic floor
+# to reduce captured CO2 back to solid carbon (HEXA-TRANSMUTE L5).
+DH_F_CO2 = 393.5e3
+
+# Atmospheric mass of CO2 per ppmv (Gt CO2 / ppmv). 1 ppmv CO2 ~ 2.13 Gt C ~ 7.82 Gt CO2.
+GT_CO2_PER_PPM = 7.82
+
 
 # --- thermodynamic separation floor -------------------------------------------
 
@@ -111,6 +122,48 @@ def perimeter_area_ratio(n_sides: int) -> float:
     if n_sides < 3:
         raise ValueError(f"n_sides must be >= 3: {n_sides}")
     return 2.0 * math.sqrt(n_sides * math.tan(math.pi / n_sides))
+
+
+# --- sensing resolution (L3 chip) ---------------------------------------------
+
+def bits_for_resolution(full_scale: float, resolution: float) -> float:
+    """ADC bit-depth required to resolve `resolution` over a `full_scale` span:
+
+        bits = log2(full_scale / resolution)
+
+    e.g. resolving 1 ppb of CO2 over a 420 ppm (= 420_000 ppb) ambient full-scale
+    needs log2(420_000) ~ 18.7 bits — far above the HEXA-CHIP `sigma = 12`-bit ADC.
+    Returned value is a real number of bits (not yet rounded up)."""
+    if full_scale <= 0 or resolution <= 0:
+        raise ValueError(f"full_scale and resolution must be > 0: {full_scale}, {resolution}")
+    return math.log2(full_scale / resolution)
+
+
+# --- CO2 -> carbon reduction floor (L5 transmute) -----------------------------
+
+def carbon_reduction_energy_floor(dh_f_co2_j_mol: float = DH_F_CO2) -> float:
+    """Thermodynamic minimum energy to reduce CO2 to one ton of solid carbon, per
+    ton of carbon product:
+
+        E_floor = dh_f_co2 / M_C * 1e6        [J / ton C]
+
+    Uses the CO2 formation enthalpy (default DH_F_CO2 = 393.5 kJ/mol). This is the
+    reverse-of-combustion floor for CO2 -> C + O2 (HEXA-TRANSMUTE), before any CVD
+    overhead — a hard lower bound, ignoring catalysts/electrochem efficiency."""
+    if dh_f_co2_j_mol <= 0:
+        raise ValueError(f"dh_f_co2_j_mol must be > 0: {dh_f_co2_j_mol}")
+    return dh_f_co2_j_mol / M_C * 1e6
+
+
+# --- planetary mass balance (L6 universal) ------------------------------------
+
+def ppm_to_gt_co2(delta_ppm: float, gt_per_ppm: float = GT_CO2_PER_PPM) -> float:
+    """Atmospheric CO2 mass (Gt CO2) corresponding to a `delta_ppm` change in mixing
+    ratio: delta_ppm * GT_CO2_PER_PPM. Drawing 420 -> 280 ppm (140 ppm) is ~1095 Gt
+    CO2 of gross atmospheric removal (before ocean re-equilibration)."""
+    if delta_ppm < 0:
+        raise ValueError(f"delta_ppm must be >= 0: {delta_ppm}")
+    return delta_ppm * gt_per_ppm
 
 
 # --- falsifier harness --------------------------------------------------------

@@ -9,7 +9,7 @@
       {
         "id": "numerology-not-physical",
         "state": "open",
-        "value": "3/6 n=6 lattice→target identities physically implausible (H_006): 48 mmol/g (=J₂·φ) needs 211% CO₂ by sorbent mass (H_003), $24/ton (=J₂) below credible floors (H_004), 24× capacity ratio inherits the impossible target.",
+        "value": "Lattice-derived targets keep failing physics checks: 48 mmol/g (=J₂·φ) needs 211% CO₂ by sorbent mass (H_003); $24/ton (=J₂) below credible floors (H_004); σ=12-bit ADC is ~7 bits short of ppb sensing (H_007); $1M/ton graphene can't survive Mt-scale + CO₂→C reduction is 20× the capture floor (H_008); 100 Gt/yr (12-yr drawdown) needs ~900 EJ/yr > global primary energy (H_009). H_006: a physics-blind relabel matches the lattice just as well → decorative, not predictive.",
         "threshold": "every lattice-derived (φ=2·τ=4·σ=12·J₂=24) target must clear an independent physics bounds-check BEFORE it becomes a design goal; the lattice is a mnemonic, not a predictor.",
         "source": "state/n6-carbon-capture-spec.md"
       }
@@ -59,7 +59,7 @@
         },
         {
           "id": "L3.chip",
-          "role": "HEXA-CHIP (chip) — RISC-V N6: 6-stage pipeline, 6 sensor channels, 12 data streams. ADC σ−τ=8 bit gas / σ=12 bit system; SNN 6 layers, 6-qubit sensing. Target ppb-level CO₂ sensing."
+          "role": "HEXA-CHIP (chip) — RISC-V N6: 6-stage pipeline, 6 sensor channels, 12 data streams. ADC σ−τ=8 bit gas / σ=12 bit system; SNN 6 layers, 6-qubit sensing. ppb-level CO₂ sensing is NOT delivered by a 12-bit ADC over the ambient span (H_007: ~19 bits needed; reachable only via a narrowed span or sigma-delta)."
         },
         {
           "id": "L4.plant",
@@ -67,7 +67,7 @@
         },
         {
           "id": "L5.transmute",
-          "role": "HEXA-TRANSMUTE (conversion) — CO₂ → diamond (sp3, τ=4 bonds) / graphene (C6) / CNT / C60. All products Carbon Z=6; 6 CVD chambers. Value $0/ton → graphene $1M/ton."
+          "role": "HEXA-TRANSMUTE (conversion) — CO₂ → diamond (sp3, τ=4 bonds) / graphene (C6) / CNT / C60. All products Carbon Z=6; 6 CVD chambers. Waste-to-value direction holds, but conversion is the energy-DOMINANT step (H_008: CO₂→C reduction ≥32.8 GJ/ton-C ≈ 20× the capture floor), and $1M/ton graphene cannot survive Mt-scale (~1000× the market) — not a free value bonus."
         },
         {
           "id": "L6.universal",
@@ -91,7 +91,7 @@
       "children": [
         { "id": "HYPOTHESES", "role": "HYPOTHESES/ — REGISTRY.jsonl (one JSON line per hypothesis) + cards/H_*.md (frozen pre-register + ≥5 falsifiers) + cards/_TEMPLATE.md skeleton. Domains: sorbent/process/reactor/chip/plant/transmute/system.",
           "children": [
-            { "id": "HYPOTHESES.verified", "role": "6 cards run (each 6/6 falsifiers): H_001 floor 🟢, H_002 headroom 🟢, H_003 48 mmol/g unphysical 🟢(target refuted), H_004 cost 🟡 PARTIAL, H_005 honeycomb 🟢, H_006 numerology-predictor 🟢(skeptic holds). Real physics: separation floor (19.3 kJ/mol), finite headroom (~10×), honeycomb (hexagon best tiler). Numerology-refuted: 48 mmol/g, $24/ton." }
+            { "id": "HYPOTHESES.verified", "role": "9 cards run (each 6/6 falsifiers). 🟢 real-physics: H_001 separation floor (19.3 kJ/mol), H_002 headroom (~10×), H_005 honeycomb (hexagon best tiler). 🟢 numerology/target refuted: H_003 48 mmol/g (211% mass), H_007 12-bit ADC ≠ ppb (~7 bits short), H_008 CO₂→C reduction 20× the capture floor + $1M/ton not Mt-scale, H_006 lattice=label-not-predictor (skeptic holds). 🟡 PARTIAL: H_004 cost ($24/ton optimistic), H_009 planetary (mass-coherent but ~900 EJ/yr energy + ocean walls, gated on H_001/H_002)." }
           ]
         },
         { "id": "tool", "role": "tool/carbon_capture.py — stdlib-only closed-form primitives (min_separation_work Sherwood floor, energy_headroom, capacity/cost/annual ratios) + Falsifier/evaluate ledger. Per-hypothesis runs + result.json live under state/<hX>/." }
