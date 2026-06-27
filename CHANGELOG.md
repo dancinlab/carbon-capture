@@ -2,6 +2,25 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — 실측전 research pass over the dry-boundary open questions
+
+- Ran a literature pass (`sidecar research arxiv|web|fetch`) BEFORE any DFT/GPU/screening spend,
+  per the carbon-capture "실측전 research" rule. Artifact: `state/research-pass-2026-06-27.md`.
+- Findings CONFIRM the closed-form harness on every axis tested — no expensive compute justified:
+  - **Cost (H_004)**: Climeworks Gen3 2030 targets ~$250–350/ton captured · $400–600/ton net
+    removal (climeworks.com / carboncapturejournal / carbonherald) — ~10× the spec's $24/ton, so
+    the "endpoint optimistic" verdict is primary-source-validated.
+  - **Energy (H_002/H_010)**: Gen3 "halves energy consumption" → energy is the lever, as predicted.
+    arXiv:2501.04825 "Intrinsic DAC" derives the same thermodynamic CO₂/energy upper bound across
+    11,660 MOFs the harness proxies; its insight "relative uptake change (working capacity) matters,
+    not selectivity" validates H_010/H_012 (reference-match).
+  - **Water (H_016)**: vacuum/moisture-swing DAC (arXiv:2606.26438, 2508.02650) confirms H_016's
+    Limit L2 — water can be a regeneration resource, not only a parasite.
+  - **MOF screening**: autonomous foundries + public 11,660-MOF datasets (arXiv:2207.12467) make
+    the screening question a $0 data-ingestion task, not new compute.
+- `ARCHITECTURE.json` lockstep: `HYPOTHESES.dry-boundary` updated (research confirms harness; H_017+
+  = $0 data-ingestion, not compute); `thesis.cost-floor` cites the Climeworks 2030 primary source.
+
 ## 2026-06-27 — fourth hypothesis batch (H_014–H_016) + closed-form dry boundary
 
 - Three pre-registered hypotheses (each 6/6 falsifiers) closing the systems/lifecycle thread
