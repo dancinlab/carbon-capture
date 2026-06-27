@@ -456,6 +456,32 @@ def nnr_fom(active_grid_kwh_per_ton: float, grid_intensity_kg_per_kwh: float = 0
     return {"net_fraction": net, "nnr_ton_per_gj": nnr, "active_kwh": active_grid_kwh_per_ton}
 
 
+# --- path-selection: abatement-before-removal (H_023) -------------------------
+
+def abatement_crossover_intensity(dac_kwh_per_ton: float) -> float:
+    """Marginal grid carbon intensity (kgCO2/kWh) at which spending a clean kWh on
+    electric DAC ties spending it to displace fossil generation (H_023):
+
+        DAC nets 1000 kg / dac_kwh per kWh of clean power; displacement avoids the
+        marginal grid intensity g per kWh. They tie at g* = 1000 / dac_kwh.
+
+    Above g* (dirtier marginal plant), a clean kWh AVOIDS more CO2 by displacing
+    fossil than it REMOVES via DAC -> abatement before removal. For Gen3 DAC
+    (1500 kWh/ton) g* = 0.667 kgCO2/kWh (≈ a gas plant); coal (~0.9) is above it."""
+    if dac_kwh_per_ton <= 0:
+        raise ValueError("dac_kwh_per_ton must be > 0")
+    return 1000.0 / dac_kwh_per_ton
+
+
+def dominates(a: dict, b: dict) -> bool:
+    """True if scorecard `a` is >= `b` on every axis and strictly > on at least one
+    (Pareto domination). Used by H_021 to test for a single best path."""
+    keys = set(a) & set(b)
+    if not keys:
+        raise ValueError("no shared axes")
+    return all(a[k] >= b[k] for k in keys) and any(a[k] > b[k] for k in keys)
+
+
 # --- falsifier harness --------------------------------------------------------
 
 @dataclass

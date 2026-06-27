@@ -70,7 +70,16 @@ H_017 reference-match       🟢 SUPPORTED   harness PREDICTS measured Mg-MOF-74
 H_018 systems-ref-match     🟢 SUPPORTED   harness PREDICTS measured Gen3 energy/cost
 H_019 synthesis-frontier    🟢 SUPPORTED   frontier 12.3× ABOVE the 2nd-law floor (capstone)
 H_020 nnr-figure-of-merit   🟢 SUPPORTED   free-energy paths 13–90× over electric DAC (NOVEL metric)
+H_021 portfolio-no-winner   🟢 SUPPORTED   no path wins all 4 axes → removal is a portfolio
+H_022 dac-niche-concentrated 🟢 SUPPORTED  electric = point-source (flue 286× less air), not dilute air
+H_023 abatement-before-removal 🟢 SUPPORTED clean kWh displaces fossil first while grid > 0.67 kg/kWh
 ```
+
+**"Is electric DAC the right path?"** (the H_020 implication) → three verified answers: (H_021)
+no path dominates all of energy/rate/footprint/permanence, so it's a **portfolio** not a winner;
+(H_022) electric capture is **mis-targeted not wrong-tech** — point-source/flue (286× less air) is
+its niche, dilute air on a fossil grid is not; (H_023) while the marginal grid plant emits >0.67
+kgCO₂/kWh, a clean kWh **avoids more by displacing fossil than DAC removes** — abatement before removal.
 
 **The novel result (H_020):** since no *mechanism* is new, the novelty is a **method** — a unified
 cross-family figure of merit (net CO₂ per *active grid* energy on a realistic fossil grid). On it,

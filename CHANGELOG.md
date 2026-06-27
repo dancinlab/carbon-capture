@@ -2,6 +2,26 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — H_021–H_023: "is electric DAC the right path?" — three verified answers
+
+- H_020's implication ("ask whether electric DAC is the right path before making it cleaner")
+  turned into three pre-registered hypotheses (each 6/6 falsifiers):
+  - **H_021** portfolio-no-single-path 🟢 SUPPORTED — no path Pareto-dominates all four deployment
+    axes (energy·rate·footprint·permanence): electric DAC owns rate/footprint/permanence, the
+    artificial leaf owns energy, weathering is worst on rate → removal is a **portfolio**, "is DAC
+    THE path?" is mis-framed.
+  - **H_022** dac-niche-concentrated 🟢 SUPPORTED — electric capture is mis-TARGETED, not wrong-tech:
+    a concentrated source (flue, 12% CO₂) needs **286× less air** + a **3.7× lower floor** than dilute
+    air, and air ratio ≫ floor ratio → air HANDLING is the dilute-DAC wall. Point-source = electric,
+    dilute air on a fossil grid = free-energy (H_020).
+  - **H_023** abatement-before-removal 🟢 SUPPORTED — marginal-electron opportunity cost: a clean kWh
+    AVOIDS the grid's marginal intensity by displacing fossil, or REMOVES 1000/E_dac via DAC; they tie
+    at **g\* = 0.667 kgCO₂/kWh**. While the marginal plant is coal (~0.9 > g\*), abatement beats removal;
+    DAC's value RISES as the grid cleans (g\* widens to 1.33 at 750 kWh/ton). Sequencing, not "never remove".
+- Harness +2 primitives (`abatement_crossover_intensity`, `dominates`). `REGISTRY.jsonl`: +3 (🟢; 34 lines).
+  `ARCHITECTURE.json`: `convergence.records[novel-is-the-method-not-the-mechanism]` extended with the
+  H_021–H_023 resolution; README lockstep.
+
 ## 2026-06-27 — H_020: the NOVEL result with an overwhelming numerical edge (NNR figure of merit)
 
 - "수치상으로 압도적 우위 NOVEL" — since 0/11 mechanisms are new, the novelty is **methodological**:

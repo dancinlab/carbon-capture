@@ -1,0 +1,46 @@
+{
+  "metrics": {
+    "air_ratio_air_over_flue": 285.71428571428567,
+    "floor_ratio_air_over_flue": 3.667117654922073,
+    "flue_floor_kj_mol": 5.256042197575963,
+    "monotone_dilution": true,
+    "purer_needs_less_air": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-022-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-022-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-022-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-022-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-022-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-022-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = electric capture is mis-TARGETED not wrong-tech: on flue (12% CO2) it needs 286x less air and a 3.7x lower floor than dilute air -> point-source = electric, dilute air on a fossil grid = free-energy (H_020)."
+}
