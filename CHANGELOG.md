@@ -2,6 +2,24 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — second hypothesis batch (H_007–H_009) via /afg
+
+- Three more pre-registered hypotheses across the upper stack (each 6/6 falsifiers, deterministic):
+  - **H_007** chip-adc-resolution 🟢 SUPPORTED — a 12-bit (σ) ADC quantizes 420 ppm into 103-ppb
+    steps, ~6.7 bits short of the ~18.7 needed for ppb sensing; reachable only via a ~4 ppm span or
+    sigma-delta. (`σ = 12-bit → ppb over ambient` refuted.)
+  - **H_008** transmute-energy-floor 🟢 SUPPORTED — CO₂→solid-carbon reduction floor is 32.8 GJ/ton-C
+    (8.94 GJ/ton-CO₂) = 20× the capture thermodynamic floor, so conversion is the energy-dominant step;
+    $1M/ton × 1 Mt/yr = $1000B/yr ≈ 1000× the graphene market. ("free value bonus at scale" refuted.)
+  - **H_009** planetary-scale 🟡 PARTIAL — 140 ppm = 1095 Gt CO₂, /12 yr = 91 Gt/yr (mass-coherent with
+    the ~100 Gt/yr claim), but real-DAC energy ~900 EJ/yr > global primary (~600 EJ/yr) and ocean
+    re-equilibration needs ~2× more → gated on the H_001/H_002 efficiency thesis.
+- Harness (`tool/carbon_capture.py`): added `bits_for_resolution` (H_007), `carbon_reduction_energy_floor`
+  (H_008), `ppm_to_gt_co2` (H_009) + constants `M_C`, `DH_F_CO2`, `GT_CO2_PER_PPM`.
+- `REGISTRY.jsonl`: +3 lines (🟢×2, 🟡×1; now 9 total). Cards `H_007..H_009` + run/`result.json` under `state/`.
+- `ARCHITECTURE.json` lockstep: `verification` node now lists 9 verdicts; `convergence.records` extended
+  with the H_007–H_009 numerology failures; `L3.chip` / `L5.transmute` flagged with their verified limits.
+
 ## 2026-06-27 — first hypothesis batch (H_001–H_006) generated + verified
 
 - Generated and ran the first 6 pre-registered hypotheses (each 6/6 falsifiers, deterministic,
