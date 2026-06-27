@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "gen3_kj_mol": 237.64860000000002,
+    "gen3_headroom": 12.329673405784789,
+    "gen3_breakeven_kg_kwh": 0.6666666666666666,
+    "old_breakeven_kg_kwh": 0.4,
+    "breakeven_ratio": 1.6666666666666665,
+    "net_gen3_grid040": 0.4,
+    "net_old_grid040": 0.0,
+    "cost_ratio_2030_vs_spec": 12.5,
+    "floor_self_headroom": 1.0
+  },
+  "falsifiers": [
+    {
+      "name": "F-018-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-018-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-018-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-018-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-018-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-018-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = the harness predicts measured DAC techno-economics: Gen3's 1500 kWh/ton gives headroom 12.3x (H_002 band), breakeven 0.667 kg/kWh = 1.67x the 9 GJ/ton value (H_014 coupling), and $24/ton is 12.5x below the 2030 $300/ton target (H_004). Systems-axis frontier crossed."
+}

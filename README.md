@@ -67,6 +67,7 @@ H_014 net-negativity        🟢 SUPPORTED   fossil grid futile; breakeven 0.40 
 H_015 storage-capacity      🟢 SUPPORTED   void ~9× demand → not the bottleneck
 H_016 humidity-coload       🟢 SUPPORTED   air carries 37–170× more H₂O than CO₂
 H_017 reference-match       🟢 SUPPORTED   harness PREDICTS measured Mg-MOF-74 DAC data
+H_018 systems-ref-match     🟢 SUPPORTED   harness PREDICTS measured Gen3 energy/cost
 ```
 
 **Closed-form harness exhausted at H_016** (16 cards: 14 🟢 / 2 🟡). Every spec claim numerically
@@ -78,12 +79,13 @@ across 11,660 MOFs (validates H_010/H_012); moisture-swing DAC confirms H_016's 
 limit. The remaining gaps (real sorbent uptake, cycle-life, bottom-up CAPEX) are **$0
 data-ingestion of public datasets**, not new compute.
 
-**Frontier crossed (H_017):** that data-ingestion step is now done — H_017 feeds *measured*
-anchors (Mg-MOF-74 binding 34.3 kJ/mol; bare <1 vs amine >1 mmol/g at 400 ppm; 3.67 mmol/g at
-flue) and the closed-form harness **predicts them from first principles** (θ≈4e-4 at DAC vs ≈0.09
-at flue; 48 mmol/g = 24× measured best). The self-contained floors are now validated against
-measured data. The next frontier (H_018+, still $0 data-ingestion) is per-sorbent
-kinetics/cycle-life/CAPEX from techno-economic papers; expensive DFT/GPU remains unjustified.
+**Frontier crossed (H_017 materials + H_018 systems):** that data-ingestion step is now done. The
+closed-form harness **predicts measured reality from first principles** on both axes — *materials*
+(H_017: bare Mg-MOF-74 at 34.3 kJ/mol → θ≈4e-4 at DAC vs ≈0.09 at flue, matching <1 vs 3.67 mmol/g;
+48 mmol/g = 24× measured best) and *systems* (H_018: Gen3's confirmed 1500 kWh/ton → headroom 12.3×,
+breakeven 0.667 kg/kWh = 1.67× the 9 GJ/ton value, $24/ton = 12.5× below the 2030 $300/ton target).
+The self-contained floors are validated against measured data. The remaining frontier (H_019+, still
+$0 data-ingestion) is per-sorbent kinetics/cycle-life/CAPEX line items; expensive DFT/GPU stays unjustified.
 
 Two honest threads: (1) the **real physics** wins (floor, headroom + its sensible-heat
 mechanism, honeycomb, compression, binding optimum, air-handling) hold *without* invoking

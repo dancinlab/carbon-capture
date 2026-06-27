@@ -2,6 +2,20 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — H_018: systems-axis frontier (reference-match vs measured techno-economics)
+
+- Completed the frontier breakthrough across the systems axis (H_017 did materials):
+  - **H_018** systems-reference-match 🟢 SUPPORTED — Climeworks Gen3's confirmed **1500 kWh/ton
+    (5.4 GJ/ton)** gives energy headroom 12.3× (inside H_002's 3–30× band); its net-negativity
+    breakeven (0.667 kg/kWh) is **exactly 1.67×** the 9 GJ/ton value, confirming H_014's
+    inverse-energy coupling against measured data, and that efficiency moves DAC from net-zero to
+    net +0.40 on a 0.40 kg/kWh grid; the 2030 $300/ton target is 12.5× the spec's $24/ton (H_004).
+  - Reused harness (no new primitives). Anchors: Climeworks Gen3 "1,500 kWh/ton" + 2030 $250–350/ton
+    (climeworks.com press; news.sustainability-directory.com).
+- `REGISTRY.jsonl`: +1 (🟢; now **18 total** — 16 🟢 / 2 🟡).
+- `ARCHITECTURE.json` lockstep: `verification` node → 18 verdicts (materials + systems reference-match);
+  `dry-boundary` node → both axes crossed, remaining frontier H_019+ (kinetics/cycle-life/CAPEX, still $0).
+
 ## 2026-06-27 — H_017: frontier breakthrough (reference-match vs measured DAC data)
 
 - Crossed the closed-form dry boundary by ingesting MEASURED literature anchors (the $0
