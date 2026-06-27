@@ -1,9 +1,10 @@
 {
-  "$schema": "c4",
-  "role": "carbon-capture — Architecture (JSON tree · SSOT)",
+  "schemaVersion": "2.0",
+  "kind": "architecture-tree",
   "title": "carbon-capture — Architecture",
-  "updated": "2026-06-27",
-  "ssot_note": "JSON=SSOT (AI/tool parse); humans view architecture.html via `python3 serve.py`. Update in-place (not append). History/decisions/dates → CHANGELOG.md + git (never in tree). Hierarchy decomposes via `children` (commons single-doc); one fact per node, deeper detail → child nodes. Imported origin spec = state/n6-carbon-capture-spec.md (seed of record, not SSOT).",
+  "summary": "Engineer CO₂ capture-storage-conversion as a designed multi-scale system (HEXA-CCUS), not a single sorbent — 8-stage L0–L7 chain bound by the n=6 lattice, hypothesis-verified against physics floors.",
+  "viewer": "architecture.html",
+  "serve": "python3 serve.py  (로컬 서버 + 브라우저 자동 오픈; file:// fetch 차단 우회)",
   "convergence": {
     "records": [
       {
@@ -29,89 +30,493 @@
       }
     ]
   },
-  "children": [
+  "columns": [
     {
-      "id": "overview",
-      "role": "Engineer CO₂ capture-storage-conversion as a designed multi-scale system (HEXA-CCUS), not a single sorbent. Carbon (Z=6) anchored, n=6 invariant lattice. DAC single-stage rigs are the first instance, not the boundary; the 8-stage L0–L7 chain is the unit of design.",
-      "children": [
-        {
-          "id": "scope",
-          "role": "The capture-storage-conversion system, not one sorbent. Reference fields = adsorption/MOF chemistry, separation-process engineering, carbon-materials, geologic sequestration."
-        },
-        {
-          "id": "thesis",
-          "role": "Capture cost/energy is an engineering-and-volume problem, reopenable down to a thermodynamic floor — not a fixed ceiling.",
-          "children": [
-            { "id": "thesis.energy-floor", "role": "Separation work has a floor W_min = RT·ln(1/x_CO2) ≈ 19.3 kJ/mol (= 122 kWh/ton; H_001). The full energy ladder (H_019 synthesis): research frontier Gen3 1500 kWh/ton → working-capacity + heat-recovery → ~222 → swing-mode/conversion (no compression) → ~128 → irreducible floor 122 kWh/ton. The frontier is 12.3× ABOVE the floor and the entire gap is the addressable regeneration sensible-heat term (H_010), not a thermodynamic ceiling. On the grid the world ACTUALLY has (fossil), the cross-family figure of merit (H_020) ranks free-energy paths 13–90× above electric DAC on net-CO₂-per-active-energy — so the open question is not just lowering DAC energy but whether electric DAC is the right path at all." },
-            { "id": "thesis.cost-floor", "role": "Capture cost reopenable: the 25× gap to Climeworks ≈ $600/ton is learning-curve-plausible (~16 doublings at 18% LR, H_004), but the $24/ton (= J₂) endpoint is verification-flagged optimistic — below the $50 aspiration and $100 DOE floors, and ~10× below Climeworks' own aggressive 2030 Gen3 target of $250–350/ton captured (research-pass primary source). Chase the gap, don't bank the exact number." },
-            { "id": "thesis.waste-to-value", "role": "Captured CO₂ is feedstock, not waste: conversion to graphene/CNT/diamond flips value from $0/ton to ~$1M/ton." }
-          ]
-        }
-      ]
+      "key": "name",
+      "label": "name",
+      "tree": true
     },
     {
-      "id": "components",
-      "role": "The 7-level HEXA-CCUS stack — each level a design layer from atomic sorbent to planetary control, all bound by the n=6 lattice (φ=2 · τ=4 · σ=12 · J₂=24).",
-      "children": [
-        {
-          "id": "L0.sorbent",
-          "role": "HEXA-SORBENT (material) — top-6 MOF/sorbents, ALL CN=6 octahedral. The 48 mmol/g (= J₂·φ) figure is verification-refuted as unreachable (H_003: =211% CO₂ by sorbent mass, ≥4.8× any measured adsorbent); the honest target is to beat Climeworks ~2.0 mmol/g, re-anchored to measured uptake (~8–10 mmol/g best-case).",
-          "children": [
-            { "id": "L0.candidates", "role": "Mg/Co/Ni-MOF-74, Al-MIL-53, Fe-MIL-100, Cr-MIL-101 — 6 metals, all CN=6; Zeolite-6A pore, graphene C6 ring. Reality check (H_017, measured): bare Mg-MOF-74 (binding 34.3 kJ/mol) gives <1 mmol/g at 400 ppm — it WORKS at flue (3.67 mmol/g @ 0.1 bar) but FAILS at DAC dilution; amine functionalization (piperazine/ed) is required to reach >1 mmol/g, pushing binding into the H_012 ~50 kJ/mol window." }
-          ]
-        },
-        {
-          "id": "L1.process",
-          "role": "HEXA-PROCESS (process) — TSA 6-stage cycle, PSA 12-bed (6 adsorb + 6 desorb). Bottleneck level. The 10× gap from 200→20 kJ/mol is mostly TSA sensible heat, not separation work (H_010: ~100 kJ/mol ∝ 1/working-capacity); levers = working capacity (H_003 dir) + heat recovery + the H_012 ~50 kJ/mol binding optimum. An engineering wall, not a thermodynamic ceiling.",
-          "children": [
-            { "id": "L1.sensors", "role": "6 sensor types (CO2/O2/H2O/T/P/flow); ΔT = 120 °C = σ·(σ−φ)." }
-          ]
-        },
-        {
-          "id": "L2.reactor",
-          "role": "HEXA-REACTOR (core) — honeycomb hexagonal geometry (Hales 2001 optimal). 6 reactor types (rotating/packed/fluidized/monolith/hollow-fiber/microreactor). Target 12 ton/day/module (= σ, 12× current)."
-        },
-        {
-          "id": "L3.chip",
-          "role": "HEXA-CHIP (chip) — RISC-V N6: 6-stage pipeline, 6 sensor channels, 12 data streams. ADC σ−τ=8 bit gas / σ=12 bit system; SNN 6 layers, 6-qubit sensing. ppb-level CO₂ sensing is NOT delivered by a 12-bit ADC over the ambient span (H_007: ~19 bits needed; reachable only via a narrowed span or sigma-delta)."
-        },
-        {
-          "id": "L4.plant",
-          "role": "HEXA-PLANT (system) — industrial scale. DAC farm 6 rows / 36 sections; 12 MPa SC-CO2 pipeline (H_011: ~11.9 kJ/mol compression, supercritical OK), 120 km boosters, 12 injection wells, 6 sealing layers. 1 Mt/yr = 250× Climeworks (arithmetic checks), but the binding duty is air handling (H_013: ~1.3e12 m³/yr; flue needs 286× less) — fan power, not chemistry. CAPEX $24/ton flagged optimistic (H_004)."
-        },
-        {
-          "id": "L5.transmute",
-          "role": "HEXA-TRANSMUTE (conversion) — CO₂ → diamond (sp3, τ=4 bonds) / graphene (C6) / CNT / C60. All products Carbon Z=6; 6 CVD chambers. Waste-to-value direction holds, but conversion is the energy-DOMINANT step (H_008: CO₂→C reduction ≥32.8 GJ/ton-C ≈ 20× the capture floor), and $1M/ton graphene cannot survive Mt-scale (~1000× the market) — not a free value bonus."
-        },
-        {
-          "id": "L6.universal",
-          "role": "HEXA-UNIVERSAL (planetary) — 6 latitude bands × 6 stations = 36 hubs. 6 subsystems: atmospheric/ocean/crustal/stratospheric/biosphere/control. Target 420 → 280 ppm in σ=12 years, 100 Gt CO₂/yr."
-        }
-      ]
+      "key": "role",
+      "label": "role"
     },
     {
-      "id": "data-flow",
-      "role": "Capture → store → convert: air → sorb → desorb/concentrate → compress → sequester OR transmute to carbon materials.",
-      "children": [
-        { "id": "flow.capture", "role": "Air/flue gas → L0 sorbent adsorption → L1 TSA/PSA desorption-concentration → L2 honeycomb reactor throughput." },
-        { "id": "flow.store", "role": "Concentrated CO₂ → 12 MPa SC-CO₂ compression → pipeline → geologic injection (L4)." },
-        { "id": "flow.convert", "role": "Alternatively → L5 CVD transmutation → graphene/CNT/diamond/C60 carbon products." },
-        { "id": "flow.control", "role": "L3 chip sensing + L6 36-hub network close the planetary control loop (ppm setpoint tracking)." }
-      ]
+      "key": "id",
+      "label": "id"
     },
     {
-      "id": "verification",
-      "role": "Hypothesis-verification system (anima-parity): pre-register → falsify → run → verdict. Flat registry + one rich card per hypothesis; shared deterministic harness in repo-root tool/.",
-      "children": [
-        { "id": "HYPOTHESES", "role": "HYPOTHESES/ — REGISTRY.jsonl (one JSON line per hypothesis) + cards/H_*.md (frozen pre-register + ≥5 falsifiers) + cards/_TEMPLATE.md skeleton. Domains: sorbent/process/reactor/chip/plant/transmute/system.",
-          "children": [
-            { "id": "HYPOTHESES.verified", "role": "19 cards run (6/6 falsifiers, except H_019 7/7); 17 🟢 SUPPORTED, 2 🟡 PARTIAL. Real-physics & mechanism (🟢): H_001 separation floor (19.3 kJ/mol), H_002 headroom (~10×), H_005 honeycomb, H_010 TSA sensible heat ~100 kJ/mol = headroom mechanism (∝1/working-capacity), H_011 SC-CO₂ compression ~11.9 kJ/mol, H_012 Sabatier binding optimum ~50 kJ/mol, H_013 air-handling ~1.3e12 m³/yr (flue 286× less), H_014 net-negativity (fossil grid futile; breakeven 0.40 kg/kWh), H_015 storage void sufficient (9× demand), H_016 H₂O co-load 37–170×. Numerology/target refuted (🟢): H_003 48 mmol/g, H_007 12-bit≠ppb, H_008 CO₂→C 20× floor + $1M/ton not scale, H_006 lattice=label. Literature reference-match (🟢): H_017 (materials) harness PREDICTS measured Mg-MOF-74 DAC failure/flue success + 48 = 24× measured best; H_018 (systems) predicts measured Gen3 techno-economics (1500 kWh/ton → headroom 12.3×, breakeven 0.667 = 1.67× the 9 GJ/ton value, $24 = 12.5× below 2030 $300/ton). 🟡 PARTIAL: H_004 $24/ton optimistic, H_009 planetary (~900 EJ/yr + ocean walls). Net: DAC walls are engineering (working capacity·heat recovery·fan power·clean energy), not thermodynamic ceilings; closed-form floors now validated against measured data on BOTH materials + systems axes. Capstone synthesis (🟢 H_019, beyond frontier): composing all verified primitives shows the research frontier (Gen3 1500 kWh/ton) sits 12.3× ABOVE the 2nd-law floor (122 kWh/ton) — the whole gap is addressable regeneration heat — and prescribes the design (high working capacity + heat recovery + swing-mode/conversion) approaching the floor." },
-            { "id": "HYPOTHESES.dry-boundary", "role": "Closed-form ($0) harness exhausted at H_016; the 실측전-research pass (state/research-pass-2026-06-27.md) confirmed it and showed the next step is $0 data-ingestion, not compute. H_017 (materials) + H_018 (systems) CROSSED that frontier (reference-match): fed MEASURED anchors — Mg-MOF-74 34.3 kJ/mol, bare <1 vs piperazine >1 mmol/g at 400 ppm, 3.67 mmol/g at flue (H_017); Climeworks Gen3 1500 kWh/ton + 2030 $250–350/ton (H_018) — and the harness PREDICTED them from first principles (θ 4e-4 DAC vs 0.09 flue; headroom 12.3×; breakeven 0.667 = 1.67× the 9 GJ/ton value). Self-contained thermodynamics → literature-validated on both axes. Remaining frontier (H_019+, still $0 data-ingestion): per-sorbent kinetics/mass-transfer, cycle-life/degradation curves, bottom-up CAPEX line items from techno-economic papers. Expensive DFT/GPU still NOT justified." },
-            { "id": "HYPOTHESES.abstract", "role": "🜂→verified GRADUATED track (was SF imagination; every kernel now RUN deterministically, 모두 검증). Tally 2 🟢 / 3 🟡 / 6 🔴: SUPPORTED A010 fast-weather (robustly net-negative even on a dirty grid; rate is the caveat), A011 artificial-leaf (energy-free sunlight, AREA-bound — 52 km²/Mt-C). PARTIAL A005 vortex (low-ΔP air work 36 kWh/ton; residence risk), A006 carbon-battery (electro-swing 48–193 kJ/mol amine band, energy-quality+grid-storage advantage), A007 breathing-stone (Gt-scale areal ceiling, saturation cap). FALSIFIED on kernel A001 centrifuge (KE 644× floor), A002 night-frost (−143°C frost vs −50°C cooling), A003 photon-cleaver (bond 28× floor), A004 oxy-magnet (mag/thermal 1e-3 gas-phase), A008 solar-blink (1 photon 2.4× worse than heat), A009 sky-clathrate (hydrate needs −74°C from air). The 6 negatives are the negative space that sharpens why separation≈floor + swing-mode (H_019) wins. state/sf-brainstorm-2026-06-27.md surveys 11 orthogonal grabbing-principle families (acoustic·EM·photonic/quantum·radiative·bio·electrochemical·structural/orbital·phase-trapping·membrane·geochemical·artificial-photosynthesis), ~35 concepts, dry at the principle level (further ideas recombine). 11 promoted to H_A001–H_A011 cards, each a falsifiable kernel: A001 centrifuge, A002 night-frost, A003 photon-cleaver, A004 oxy-magnet (these 4 kernels point to honest NEGATIVES — bond-energy/frost-point/magnetic bounds that sharpen why separation≈floor beats them), A005 tame-twister vortex, A006 carbon-battery (electro-swing = grid storage, most live), A007 breathing-stone (cities as contactor), A008 solar-blink (optical regen replaces H_010 heat), A009 sky-clathrate (phase-trap), A010 fast-weather (enhanced weathering), A011 artificial-leaf (sunlight fuses capture+conversion). Promote a card to H_0xx only after it is actually run." }
-          ]
-        },
-        { "id": "tool", "role": "tool/carbon_capture.py — stdlib-only closed-form primitives (min_separation_work Sherwood floor, energy_headroom, capacity/cost/annual ratios) + Falsifier/evaluate ledger. Per-hypothesis runs + result.json live under state/<hX>/." }
-      ]
+      "key": "detail",
+      "label": "detail"
     }
-  ]
+  ],
+  "tree": {
+    "name": "carbon-capture",
+    "role": "",
+    "id": "carbon-capture",
+    "detail": "carbon-capture — Architecture (JSON tree · SSOT)",
+    "children": [
+      {
+        "name": "SSOT note (methodology)",
+        "role": "",
+        "id": "ssot-note",
+        "detail": "",
+        "children": [
+          {
+            "name": "JSON=SSOT (AI/tool parse); humans view",
+            "role": "",
+            "id": "ssot-note-1",
+            "detail": "JSON=SSOT (AI/tool parse); humans view architecture.html via `python3 serve.py`. Update in-place (not append). History/decisions/dates → CHANGELOG.md + git (never in tree). Hierarchy decomposes via `children` (commons single-doc); one fact per node, deeper detail → child nodes. "
+          },
+          {
+            "name": "Imported origin spec = state/n6-carbon-capture-spec.md",
+            "role": "",
+            "id": "ssot-note-2",
+            "detail": "Imported origin spec = state/n6-carbon-capture-spec.md (seed of record, not SSOT)."
+          }
+        ]
+      },
+      {
+        "name": "overview",
+        "role": "",
+        "id": "overview",
+        "detail": "Engineer CO₂ capture-storage-conversion as a designed multi-scale system (HEXA-CCUS), not a single sorbent. Carbon (Z=6) anchored, n=6 invariant lattice. DAC single-stage rigs are the first instance, not the boundary; the 8-stage L0–L7 chain is the unit of design.",
+        "children": [
+          {
+            "name": "scope",
+            "role": "",
+            "id": "scope",
+            "detail": "The capture-storage-conversion system, not one sorbent. Reference fields = adsorption/MOF chemistry, separation-process engineering, carbon-materials, geologic sequestration."
+          },
+          {
+            "name": "thesis",
+            "role": "",
+            "id": "thesis",
+            "detail": "Capture cost/energy is an engineering-and-volume problem, reopenable down to a thermodynamic floor — not a fixed ceiling.",
+            "children": [
+              {
+                "name": "energy floor",
+                "role": "",
+                "id": "thesis-energy-floor",
+                "detail": "",
+                "children": [
+                  {
+                    "name": "Separation work has a floor W_min = RT·ln(1/x_CO2) ≈",
+                    "role": "",
+                    "id": "thesis-energy-floor-1",
+                    "detail": "Separation work has a floor W_min = RT·ln(1/x_CO2) ≈ 19.3 kJ/mol (= 122 kWh/ton; H_001). The full energy ladder (H_019 synthesis): research frontier Gen3 1500 kWh/ton → working-capacity + heat-recovery → ~222 → swing-mode/conversion (no compression) → ~128 → irreducible floor 122 kWh/ton. "
+                  },
+                  {
+                    "name": "The frontier is 12.3× ABOVE the floor and the entire",
+                    "role": "",
+                    "id": "thesis-energy-floor-2",
+                    "detail": "The frontier is 12.3× ABOVE the floor and the entire gap is the addressable regeneration sensible-heat term (H_010), not a thermodynamic ceiling. "
+                  },
+                  {
+                    "name": "On the grid the world ACTUALLY has (fossil), the",
+                    "role": "",
+                    "id": "thesis-energy-floor-3",
+                    "detail": "On the grid the world ACTUALLY has (fossil), the cross-family figure of merit (H_020) ranks free-energy paths 13–90× above electric DAC on net-CO₂-per-active-energy — so the open question is not just lowering DAC energy but whether electric DAC is the right path at all."
+                  }
+                ]
+              },
+              {
+                "name": "cost floor",
+                "role": "",
+                "id": "thesis-cost-floor",
+                "detail": "",
+                "children": [
+                  {
+                    "name": "Capture cost reopenable: the 25× gap to Climeworks ≈",
+                    "role": "",
+                    "id": "thesis-cost-floor-1",
+                    "detail": "Capture cost reopenable: the 25× gap to Climeworks ≈ $600/ton is learning-curve-plausible (~16 doublings at 18% LR, H_004), but the $24/ton (= J₂) endpoint is verification-flagged optimistic — below the $50 aspiration and $100 DOE floors, "
+                  },
+                  {
+                    "name": "and ~10× below Climeworks' own aggressive 2030 Gen3",
+                    "role": "",
+                    "id": "thesis-cost-floor-2",
+                    "detail": "and ~10× below Climeworks' own aggressive 2030 Gen3 target of $250–350/ton captured (research-pass primary source). "
+                  },
+                  {
+                    "name": "Chase the gap, don't bank the exact number",
+                    "role": "",
+                    "id": "thesis-cost-floor-3",
+                    "detail": "Chase the gap, don't bank the exact number."
+                  }
+                ]
+              },
+              {
+                "name": "waste-to-value",
+                "role": "",
+                "id": "thesis-waste-to-value",
+                "detail": "Captured CO₂ is feedstock, not waste: conversion to graphene/CNT/diamond flips value from $0/ton to ~$1M/ton."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "components — 7-level HEXA-CCUS stack",
+        "role": "",
+        "id": "components",
+        "detail": "The 7-level HEXA-CCUS stack — each level a design layer from atomic sorbent to planetary control, all bound by the n=6 lattice (φ=2 · τ=4 · σ=12 · J₂=24).",
+        "children": [
+          {
+            "name": "L0 · sorbent (material)",
+            "role": "",
+            "id": "l0-sorbent",
+            "detail": "",
+            "children": [
+              {
+                "name": "HEXA-SORBENT (material) — top-6 MOF/sorbents, ALL CN=6",
+                "role": "",
+                "id": "l0-sorbent-1",
+                "detail": "HEXA-SORBENT (material) — top-6 MOF/sorbents, ALL CN=6 octahedral. "
+              },
+              {
+                "name": "The 48 mmol/g (= J₂·φ) figure is verification-refuted",
+                "role": "",
+                "id": "l0-sorbent-2",
+                "detail": "The 48 mmol/g (= J₂·φ) figure is verification-refuted as unreachable (H_003: =211% CO₂ by sorbent mass, ≥4.8× any measured adsorbent); the honest target is to beat Climeworks ~2.0 mmol/g, re-anchored to measured uptake (~8–10 mmol/g best-case)."
+              },
+              {
+                "name": "L0 candidates",
+                "role": "",
+                "id": "l0-candidates",
+                "detail": "",
+                "children": [
+                  {
+                    "name": "Mg/Co/Ni-MOF-74, Al-MIL-53, Fe-MIL-100, Cr-MIL-101 — 6",
+                    "role": "",
+                    "id": "l0-candidates-1",
+                    "detail": "Mg/Co/Ni-MOF-74, Al-MIL-53, Fe-MIL-100, Cr-MIL-101 — 6 metals, all CN=6; Zeolite-6A pore, graphene C6 ring. "
+                  },
+                  {
+                    "name": "Reality check (H_017, measured): bare Mg-MOF-74",
+                    "role": "",
+                    "id": "l0-candidates-2",
+                    "detail": "Reality check (H_017, measured): bare Mg-MOF-74 (binding 34.3 kJ/mol) gives <1 mmol/g at 400 ppm — it WORKS at flue (3.67 mmol/g @ 0.1 bar) but FAILS at DAC dilution; amine functionalization (piperazine/ed) is required to reach >1 mmol/g, pushing binding into the H_012 ~50 kJ/mol window."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "L1 · process",
+            "role": "",
+            "id": "l1-process",
+            "detail": "",
+            "children": [
+              {
+                "name": "HEXA-PROCESS (process) — TSA 6-stage cycle, PSA 12-bed",
+                "role": "",
+                "id": "l1-process-1",
+                "detail": "HEXA-PROCESS (process) — TSA 6-stage cycle, PSA 12-bed (6 adsorb + 6 desorb). Bottleneck level. "
+              },
+              {
+                "name": "The 10× gap from 200→20 kJ/mol is mostly TSA sensible",
+                "role": "",
+                "id": "l1-process-2",
+                "detail": "The 10× gap from 200→20 kJ/mol is mostly TSA sensible heat, not separation work (H_010: ~100 kJ/mol ∝ 1/working-capacity); levers = working capacity (H_003 dir) + heat recovery + the H_012 ~50 kJ/mol binding optimum. An engineering wall, not a thermodynamic ceiling."
+              },
+              {
+                "name": "L1 sensors",
+                "role": "",
+                "id": "l1-sensors",
+                "detail": "6 sensor types (CO2/O2/H2O/T/P/flow); ΔT = 120 °C = σ·(σ−φ)."
+              }
+            ]
+          },
+          {
+            "name": "L2 · reactor (core)",
+            "role": "",
+            "id": "l2-reactor",
+            "detail": "HEXA-REACTOR (core) — honeycomb hexagonal geometry (Hales 2001 optimal). 6 reactor types (rotating/packed/fluidized/monolith/hollow-fiber/microreactor). Target 12 ton/day/module (= σ, 12× current)."
+          },
+          {
+            "name": "L3 · chip",
+            "role": "",
+            "id": "l3-chip",
+            "detail": "",
+            "children": [
+              {
+                "name": "HEXA-CHIP (chip) — RISC-V N6: 6-stage pipeline, 6",
+                "role": "",
+                "id": "l3-chip-1",
+                "detail": "HEXA-CHIP (chip) — RISC-V N6: 6-stage pipeline, 6 sensor channels, 12 data streams. ADC σ−τ=8 bit gas / σ=12 bit system; SNN 6 layers, 6-qubit sensing. "
+              },
+              {
+                "name": "ppb-level CO₂ sensing is NOT delivered by a 12-bit ADC",
+                "role": "",
+                "id": "l3-chip-2",
+                "detail": "ppb-level CO₂ sensing is NOT delivered by a 12-bit ADC over the ambient span (H_007: ~19 bits needed; reachable only via a narrowed span or sigma-delta)."
+              }
+            ]
+          },
+          {
+            "name": "L4 · plant (system)",
+            "role": "",
+            "id": "l4-plant",
+            "detail": "",
+            "children": [
+              {
+                "name": "HEXA-PLANT (system) — industrial scale. DAC farm 6 rows",
+                "role": "",
+                "id": "l4-plant-1",
+                "detail": "HEXA-PLANT (system) — industrial scale. DAC farm 6 rows / 36 sections; 12 MPa SC-CO2 pipeline (H_011: ~11.9 kJ/mol compression, supercritical OK), 120 km boosters, 12 injection wells, 6 sealing layers. "
+              },
+              {
+                "name": "1 Mt/yr = 250× Climeworks (arithmetic checks), but the",
+                "role": "",
+                "id": "l4-plant-2",
+                "detail": "1 Mt/yr = 250× Climeworks (arithmetic checks), but the binding duty is air handling (H_013: ~1.3e12 m³/yr; flue needs 286× less) — fan power, not chemistry. CAPEX $24/ton flagged optimistic (H_004)."
+              }
+            ]
+          },
+          {
+            "name": "L5 · transmute (conversion)",
+            "role": "",
+            "id": "l5-transmute",
+            "detail": "",
+            "children": [
+              {
+                "name": "HEXA-TRANSMUTE (conversion) — CO₂ → diamond (sp3, τ=4",
+                "role": "",
+                "id": "l5-transmute-1",
+                "detail": "HEXA-TRANSMUTE (conversion) — CO₂ → diamond (sp3, τ=4 bonds) / graphene (C6) / CNT / C60. All products Carbon Z=6; 6 CVD chambers. "
+              },
+              {
+                "name": "Waste-to-value direction holds, but conversion is the",
+                "role": "",
+                "id": "l5-transmute-2",
+                "detail": "Waste-to-value direction holds, but conversion is the energy-DOMINANT step (H_008: CO₂→C reduction ≥32.8 GJ/ton-C ≈ 20× the capture floor), and $1M/ton graphene cannot survive Mt-scale (~1000× the market) — not a free value bonus."
+              }
+            ]
+          },
+          {
+            "name": "L6 · universal (planetary)",
+            "role": "",
+            "id": "l6-universal",
+            "detail": "HEXA-UNIVERSAL (planetary) — 6 latitude bands × 6 stations = 36 hubs. 6 subsystems: atmospheric/ocean/crustal/stratospheric/biosphere/control. Target 420 → 280 ppm in σ=12 years, 100 Gt CO₂/yr."
+          }
+        ]
+      },
+      {
+        "name": "data-flow",
+        "role": "",
+        "id": "data-flow",
+        "detail": "Capture → store → convert: air → sorb → desorb/concentrate → compress → sequester OR transmute to carbon materials.",
+        "children": [
+          {
+            "name": "capture",
+            "role": "",
+            "id": "flow-capture",
+            "detail": "Air/flue gas → L0 sorbent adsorption → L1 TSA/PSA desorption-concentration → L2 honeycomb reactor throughput."
+          },
+          {
+            "name": "store",
+            "role": "",
+            "id": "flow-store",
+            "detail": "Concentrated CO₂ → 12 MPa SC-CO₂ compression → pipeline → geologic injection (L4)."
+          },
+          {
+            "name": "convert",
+            "role": "",
+            "id": "flow-convert",
+            "detail": "Alternatively → L5 CVD transmutation → graphene/CNT/diamond/C60 carbon products."
+          },
+          {
+            "name": "control",
+            "role": "",
+            "id": "flow-control",
+            "detail": "L3 chip sensing + L6 36-hub network close the planetary control loop (ppm setpoint tracking)."
+          }
+        ]
+      },
+      {
+        "name": "verification",
+        "role": "",
+        "id": "verification",
+        "detail": "Hypothesis-verification system (anima-parity): pre-register → falsify → run → verdict. Flat registry + one rich card per hypothesis; shared deterministic harness in repo-root tool/.",
+        "children": [
+          {
+            "name": "HYPOTHESES/",
+            "role": "",
+            "id": "hypotheses",
+            "detail": "HYPOTHESES/ — REGISTRY.jsonl (one JSON line per hypothesis) + cards/H_*.md (frozen pre-register + ≥5 falsifiers) + cards/_TEMPLATE.md skeleton. Domains: sorbent/process/reactor/chip/plant/transmute/system.",
+            "children": [
+              {
+                "name": "verified hypotheses",
+                "role": "",
+                "id": "hypotheses-verified",
+                "detail": "",
+                "children": [
+                  {
+                    "name": "19 cards run (6/6 falsifiers, except H_019 7/7); 17 🟢",
+                    "role": "",
+                    "id": "hypotheses-verified-1",
+                    "detail": "19 cards run (6/6 falsifiers, except H_019 7/7); 17 🟢 SUPPORTED, 2 🟡 PARTIAL. "
+                  },
+                  {
+                    "name": "Real-physics & mechanism (🟢): H_001 separation floor",
+                    "role": "",
+                    "id": "hypotheses-verified-2",
+                    "detail": "Real-physics & mechanism (🟢): H_001 separation floor (19.3 kJ/mol), H_002 headroom (~10×), H_005 honeycomb, H_010 TSA sensible heat ~100 kJ/mol = headroom mechanism (∝1/working-capacity), H_011 SC-CO₂ compression ~11.9 kJ/mol, H_012 Sabatier binding optimum ~50 kJ/mol, "
+                  },
+                  {
+                    "name": "H_013 air-handling ~1.3e12 m³/yr (flue 286× less)",
+                    "role": "",
+                    "id": "hypotheses-verified-3",
+                    "detail": "H_013 air-handling ~1.3e12 m³/yr (flue 286× less), H_014 net-negativity (fossil grid futile; "
+                  },
+                  {
+                    "name": "breakeven 0.40 kg/kWh), H_015 storage void sufficient",
+                    "role": "",
+                    "id": "hypotheses-verified-4",
+                    "detail": "breakeven 0.40 kg/kWh), H_015 storage void sufficient (9× demand), H_016 H₂O co-load 37–170×. "
+                  },
+                  {
+                    "name": "Numerology/target refuted (🟢): H_003 48 mmol/g, H_007",
+                    "role": "",
+                    "id": "hypotheses-verified-5",
+                    "detail": "Numerology/target refuted (🟢): H_003 48 mmol/g, H_007 12-bit≠ppb, H_008 CO₂→C 20× floor + $1M/ton not scale, H_006 lattice=label. "
+                  },
+                  {
+                    "name": "Literature reference-match (🟢): H_017 (materials)",
+                    "role": "",
+                    "id": "hypotheses-verified-6",
+                    "detail": "Literature reference-match (🟢): H_017 (materials) harness PREDICTS measured Mg-MOF-74 DAC failure/flue success + 48 = 24× measured best; "
+                  },
+                  {
+                    "name": "H_018 (systems) predicts measured Gen3 techno-economics",
+                    "role": "",
+                    "id": "hypotheses-verified-7",
+                    "detail": "H_018 (systems) predicts measured Gen3 techno-economics (1500 kWh/ton → headroom 12.3×, breakeven 0.667 = 1.67× the 9 GJ/ton value, $24 = 12.5× below 2030 $300/ton). "
+                  },
+                  {
+                    "name": "🟡 PARTIAL: H_004 $24/ton optimistic, H_009 planetary",
+                    "role": "",
+                    "id": "hypotheses-verified-8",
+                    "detail": "🟡 PARTIAL: H_004 $24/ton optimistic, H_009 planetary (~900 EJ/yr + ocean walls). Net: DAC walls are engineering (working capacity·heat recovery·fan power·clean energy), not thermodynamic ceilings; closed-form floors now validated against measured data on BOTH materials + systems axes. "
+                  },
+                  {
+                    "name": "Capstone synthesis (🟢 H_019",
+                    "role": "",
+                    "id": "hypotheses-verified-9",
+                    "detail": "Capstone synthesis (🟢 H_019, "
+                  },
+                  {
+                    "name": "beyond frontier): composing all verified primitives",
+                    "role": "",
+                    "id": "hypotheses-verified-10",
+                    "detail": "beyond frontier): composing all verified primitives shows the research frontier (Gen3 1500 kWh/ton) sits 12.3× ABOVE the 2nd-law floor (122 kWh/ton) — the whole gap is addressable regeneration heat — and prescribes the design (high working capacity + heat recovery + swing-mode/conversion) "
+                  },
+                  {
+                    "name": "approaching the floor",
+                    "role": "",
+                    "id": "hypotheses-verified-11",
+                    "detail": "approaching the floor."
+                  }
+                ]
+              },
+              {
+                "name": "dry-boundary (closed-form frontier)",
+                "role": "",
+                "id": "hypotheses-dry-boundary",
+                "detail": "",
+                "children": [
+                  {
+                    "name": "Closed-form ($0) harness exhausted at H_016; the",
+                    "role": "",
+                    "id": "hypotheses-dry-boundary-1",
+                    "detail": "Closed-form ($0) harness exhausted at H_016; the 실측전-research pass (state/research-pass-2026-06-27.md) confirmed it and showed the next step is $0 data-ingestion, not compute. "
+                  },
+                  {
+                    "name": "H_017 (materials) + H_018 (systems) CROSSED that",
+                    "role": "",
+                    "id": "hypotheses-dry-boundary-2",
+                    "detail": "H_017 (materials) + H_018 (systems) CROSSED that frontier (reference-match): fed MEASURED anchors — Mg-MOF-74 34.3 kJ/mol, bare <1 vs piperazine >1 mmol/g at 400 ppm, 3.67 mmol/g at flue (H_017); "
+                  },
+                  {
+                    "name": "Climeworks Gen3 1500 kWh/ton + 2030 $250–350/ton",
+                    "role": "",
+                    "id": "hypotheses-dry-boundary-3",
+                    "detail": "Climeworks Gen3 1500 kWh/ton + 2030 $250–350/ton (H_018) — and the harness PREDICTED them from first principles (θ 4e-4 DAC vs 0.09 flue; headroom 12.3×; breakeven 0.667 = 1.67× the 9 GJ/ton value). "
+                  },
+                  {
+                    "name": "Self-contained thermodynamics → literature-validated on",
+                    "role": "",
+                    "id": "hypotheses-dry-boundary-4",
+                    "detail": "Self-contained thermodynamics → literature-validated on both axes. Remaining frontier (H_019+, still $0 data-ingestion): per-sorbent kinetics/mass-transfer, cycle-life/degradation curves, bottom-up CAPEX line items from techno-economic papers. Expensive DFT/GPU still NOT justified."
+                  }
+                ]
+              },
+              {
+                "name": "abstract track (graduated SF kernels)",
+                "role": "",
+                "id": "hypotheses-abstract",
+                "detail": "",
+                "children": [
+                  {
+                    "name": "🜂→verified GRADUATED track (was SF imagination; every",
+                    "role": "",
+                    "id": "hypotheses-abstract-1",
+                    "detail": "🜂→verified GRADUATED track (was SF imagination; every kernel now RUN deterministically, 모두 검증). Tally 2 🟢 / 3 🟡 / 6 🔴: SUPPORTED A010 fast-weather (robustly net-negative even on a dirty grid; rate is the caveat), A011 artificial-leaf (energy-free sunlight, AREA-bound — 52 km²/Mt-C). "
+                  },
+                  {
+                    "name": "PARTIAL A005 vortex (low-ΔP air work 36 kWh/ton",
+                    "role": "",
+                    "id": "hypotheses-abstract-2",
+                    "detail": "PARTIAL A005 vortex (low-ΔP air work 36 kWh/ton; residence risk), A006 carbon-battery (electro-swing 48–193 kJ/mol amine band, energy-quality+grid-storage advantage), A007 breathing-stone (Gt-scale areal ceiling, saturation cap). "
+                  },
+                  {
+                    "name": "FALSIFIED on kernel A001 centrifuge (KE 644× floor)",
+                    "role": "",
+                    "id": "hypotheses-abstract-3",
+                    "detail": "FALSIFIED on kernel A001 centrifuge (KE 644× floor), A002 night-frost (−143°C frost vs −50°C cooling), A003 photon-cleaver (bond 28× floor), A004 oxy-magnet (mag/thermal 1e-3 gas-phase), A008 solar-blink (1 photon 2.4× worse than heat), A009 sky-clathrate (hydrate needs −74°C from air). "
+                  },
+                  {
+                    "name": "The 6 negatives are the negative space that sharpens",
+                    "role": "",
+                    "id": "hypotheses-abstract-4",
+                    "detail": "The 6 negatives are the negative space that sharpens why separation≈floor + swing-mode (H_019) wins. "
+                  },
+                  {
+                    "name": "state/sf-brainstorm-2026-06-27.md surveys 11 orthogonal",
+                    "role": "",
+                    "id": "hypotheses-abstract-5",
+                    "detail": "state/sf-brainstorm-2026-06-27.md surveys 11 orthogonal grabbing-principle families (acoustic·EM·photonic/quantum·radiative·bio·electrochemical·structural/orbital·phase-trapping·membrane·geochemical·artificial-photosynthesis), ~35 concepts, dry at the principle level (further ideas recombine). "
+                  },
+                  {
+                    "name": "11 promoted to H_A001–H_A011 cards, each a falsifiable",
+                    "role": "",
+                    "id": "hypotheses-abstract-6",
+                    "detail": "11 promoted to H_A001–H_A011 cards, each a falsifiable kernel: A001 centrifuge, A002 night-frost, A003 photon-cleaver, A004 oxy-magnet (these 4 kernels point to honest NEGATIVES — bond-energy/frost-point/magnetic bounds that sharpen why separation≈floor beats them), A005 tame-twister vortex, "
+                  },
+                  {
+                    "name": "A006 carbon-battery (electro-swing = grid storage, most",
+                    "role": "",
+                    "id": "hypotheses-abstract-7",
+                    "detail": "A006 carbon-battery (electro-swing = grid storage, most live), A007 breathing-stone (cities as contactor), A008 solar-blink (optical regen replaces H_010 heat), A009 sky-clathrate (phase-trap), A010 fast-weather (enhanced weathering), A011 artificial-leaf (sunlight fuses capture+conversion). "
+                  },
+                  {
+                    "name": "Promote a card to H_0xx only after it is actually run",
+                    "role": "",
+                    "id": "hypotheses-abstract-8",
+                    "detail": "Promote a card to H_0xx only after it is actually run."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tool/",
+            "role": "",
+            "id": "tool",
+            "detail": "tool/carbon_capture.py — stdlib-only closed-form primitives (min_separation_work Sherwood floor, energy_headroom, capacity/cost/annual ratios) + Falsifier/evaluate ledger. Per-hypothesis runs + result.json live under state/<hX>/."
+          }
+        ]
+      }
+    ]
+  }
 }

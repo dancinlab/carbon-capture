@@ -149,9 +149,9 @@ carbon-capture/
 ├─ state/            — all work artifacts (experiments · bench · verification), git-tracked
 │                      n6-carbon-capture-spec.md = imported HEXA-CCUS origin spec
 │                      H_*_<date>/ = per-hypothesis run + result.json
-├─ ARCHITECTURE.json — final architecture SSOT (JSON `children` tree, update-in-place)
+├─ ARCHITECTURE.json — final architecture SSOT (canonical `columns`/`tree` schema v2.0, update-in-place)
 ├─ architecture.html — human viewer for the JSON (run `python3 serve.py`)
-└─ CHANGELOG.md      — history (append-only)
+└─ CHANGELOG.jsonl   — history (append-only JSONL)
 ```
 
 ## Provenance
