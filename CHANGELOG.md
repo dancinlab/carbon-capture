@@ -2,6 +2,23 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — 🜂 ABSTRACT track: SF-divergent brainstorm (H_A001–H_A008)
+
+- Divergent science-fiction ideation OUTSIDE the conventional MOF/amine/DAC stack, kept
+  tier-SEPARATED from the verified H_0xx chain (honesty — imagination, NOT run/verdicted):
+  - `state/sf-brainstorm-2026-06-27.md` — 7 orthogonal "grabbing-principle" families (acoustic·
+    electromagnetic·photonic/quantum·radiative·biological·electrochemical·structural/orbital),
+    ~24 concepts, dry-at-family-level; each carries a one-line falsifiable kernel for honesty.
+  - 8 promoted to 🜂 ABSTRACT cards `H_A001–H_A008`, each a falsifiable prediction (no run):
+    A001 carbon-centrifuge, A002 night-frost, A003 photon-cleaver, A004 oxy-magnet (these four
+    kernels point to honest NEGATIVES — bond-energy / frost-point / magnetic-vs-thermal bounds that
+    sharpen why separation≈floor beats them), A005 tame-twister (vortex contactor vs H_013 air wall),
+    A006 carbon-battery (electro-swing fused with grid storage — most live), A007 breathing-stone
+    (living building materials, cities as contactor), A008 solar-blink (optical regeneration replacing
+    the H_010 sensible-heat term).
+- `REGISTRY.jsonl`: +8 (🜂 ABSTRACT; now 27 lines = 19 verified H_0xx + 8 abstract H_A).
+- `ARCHITECTURE.json`: added `HYPOTHESES.abstract` node, explicitly tier-separated from verified.
+
 ## 2026-06-27 — H_019 capstone: synthesis BEYOND the research frontier
 
 - Composed every verified primitive (H_001 separation + H_010 regen + H_011 compression, with
