@@ -2,6 +2,25 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — third hypothesis batch (H_010–H_013): process/storage/sorbent/plant physics
+
+- Four pre-registered hypotheses (each 6/6 falsifiers) deepening the *real-physics* thread —
+  these reframe the DAC walls as engineering, not thermodynamic ceilings (goal: 고갈시까지 심화):
+  - **H_010** tsa-regeneration-heat 🟢 SUPPORTED — the 200→20 kJ/mol gap is mostly TSA sensible
+    heat (~100 kJ/mol; exactly ~200 at working-capacity 0.5 mol/kg), ∝ 1/working-capacity →
+    the mechanism behind the H_002 headroom; levers = working capacity + heat recovery.
+  - **H_011** sc-co2-compression 🟢 SUPPORTED — 12 MPa pipeline compression ~11.9 kJ/mol (0.62×
+    the capture floor), and 12 MPa is correctly supercritical (> Pc 7.38 MPa); ln-pressure scaling exact.
+  - **H_012** sorbent-binding-optimum 🟢 SUPPORTED — Sabatier window ~45–55 kJ/mol: θ(40)≈0.004
+    (weak fails at 400 ppm), θ(60)≈0.93 (strong fills but owes E_ads back at regeneration).
+  - **H_013** plant-air-throughput 🟢 SUPPORTED — 1 Mt/yr = 250× Climeworks (checks), binding duty
+    is air handling ~1.3e12 m³/yr; flue gas (12% CO₂) needs 286× less → DAC's wall is moving air.
+- Harness +4 primitives: `regeneration_sensible_heat`, `isothermal_compression_work`,
+  `langmuir_coverage`, `air_volume_per_ton_co2`.
+- `REGISTRY.jsonl`: +4 (all 🟢; now 13 total). Cards `H_010..H_013` + run/`result.json` under `state/`.
+- `ARCHITECTURE.json` lockstep: `verification` node → 13 verdicts; `L1.process` (sensible-heat
+  mechanism) and `L4.plant` (compression + air-handling) updated with their verified physics.
+
 ## 2026-06-27 — second hypothesis batch (H_007–H_009) via /afg
 
 - Three more pre-registered hypotheses across the upper stack (each 6/6 falsifiers, deterministic):

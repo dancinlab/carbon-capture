@@ -48,7 +48,7 @@
         },
         {
           "id": "L1.process",
-          "role": "HEXA-PROCESS (process) — TSA 6-stage cycle, PSA 12-bed (6 adsorb + 6 desorb). Bottleneck level: get separation right and the rest follows. Energy target 20 kJ/mol (σ−φ = 10× below 200).",
+          "role": "HEXA-PROCESS (process) — TSA 6-stage cycle, PSA 12-bed (6 adsorb + 6 desorb). Bottleneck level. The 10× gap from 200→20 kJ/mol is mostly TSA sensible heat, not separation work (H_010: ~100 kJ/mol ∝ 1/working-capacity); levers = working capacity (H_003 dir) + heat recovery + the H_012 ~50 kJ/mol binding optimum. An engineering wall, not a thermodynamic ceiling.",
           "children": [
             { "id": "L1.sensors", "role": "6 sensor types (CO2/O2/H2O/T/P/flow); ΔT = 120 °C = σ·(σ−φ)." }
           ]
@@ -63,7 +63,7 @@
         },
         {
           "id": "L4.plant",
-          "role": "HEXA-PLANT (system) — industrial scale. DAC farm 6 rows / 36 sections; 12 MPa SC-CO2 pipeline, 120 km boosters, 12 injection wells, 6 sealing layers. Target 1 Mt/yr (250× Climeworks), CAPEX $24/ton."
+          "role": "HEXA-PLANT (system) — industrial scale. DAC farm 6 rows / 36 sections; 12 MPa SC-CO2 pipeline (H_011: ~11.9 kJ/mol compression, supercritical OK), 120 km boosters, 12 injection wells, 6 sealing layers. 1 Mt/yr = 250× Climeworks (arithmetic checks), but the binding duty is air handling (H_013: ~1.3e12 m³/yr; flue needs 286× less) — fan power, not chemistry. CAPEX $24/ton flagged optimistic (H_004)."
         },
         {
           "id": "L5.transmute",
@@ -91,7 +91,7 @@
       "children": [
         { "id": "HYPOTHESES", "role": "HYPOTHESES/ — REGISTRY.jsonl (one JSON line per hypothesis) + cards/H_*.md (frozen pre-register + ≥5 falsifiers) + cards/_TEMPLATE.md skeleton. Domains: sorbent/process/reactor/chip/plant/transmute/system.",
           "children": [
-            { "id": "HYPOTHESES.verified", "role": "9 cards run (each 6/6 falsifiers). 🟢 real-physics: H_001 separation floor (19.3 kJ/mol), H_002 headroom (~10×), H_005 honeycomb (hexagon best tiler). 🟢 numerology/target refuted: H_003 48 mmol/g (211% mass), H_007 12-bit ADC ≠ ppb (~7 bits short), H_008 CO₂→C reduction 20× the capture floor + $1M/ton not Mt-scale, H_006 lattice=label-not-predictor (skeptic holds). 🟡 PARTIAL: H_004 cost ($24/ton optimistic), H_009 planetary (mass-coherent but ~900 EJ/yr energy + ocean walls, gated on H_001/H_002)." }
+            { "id": "HYPOTHESES.verified", "role": "13 cards run (each 6/6 falsifiers). 🟢 real-physics & mechanism: H_001 separation floor (19.3 kJ/mol), H_002 headroom (~10×), H_005 honeycomb (hexagon best tiler), H_010 TSA sensible heat ~100 kJ/mol = the headroom mechanism (∝1/working-capacity), H_011 SC-CO₂ compression ~11.9 kJ/mol (supercritical OK), H_012 Sabatier binding optimum ~50 kJ/mol, H_013 air-handling wall ~1.3e12 m³/yr (flue 286× less). 🟢 numerology/target refuted: H_003 48 mmol/g, H_007 12-bit≠ppb, H_008 CO₂→C 20× floor + $1M/ton not scale, H_006 lattice=label-not-predictor. 🟡 PARTIAL: H_004 $24/ton optimistic, H_009 planetary (mass-coherent, ~900 EJ/yr + ocean walls)." }
           ]
         },
         { "id": "tool", "role": "tool/carbon_capture.py — stdlib-only closed-form primitives (min_separation_work Sherwood floor, energy_headroom, capacity/cost/annual ratios) + Falsifier/evaluate ledger. Per-hypothesis runs + result.json live under state/<hX>/." }

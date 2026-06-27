@@ -1,0 +1,49 @@
+{
+  "metrics": {
+    "floor_kj_mol": 19.274525137746224,
+    "q_wc1_kj_mol": 100.0,
+    "q_wc_poor_kj_mol": 200.0,
+    "q_wc_good_kj_mol": 50.0,
+    "ratio_q_wc1_to_floor": 5.188195262157988,
+    "monotone_decreasing": true,
+    "linear_in_dt": true,
+    "zero_wc_raises": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-010-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-010-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-010-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-010-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-010-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-010-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = TSA sensible heat (~100 kJ/mol) is the dominant term over the 19.3 kJ/mol floor and scales as 1/working_capacity \u2014 the mechanism behind the H_002 headroom."
+}

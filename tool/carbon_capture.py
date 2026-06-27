@@ -166,6 +166,94 @@ def ppm_to_gt_co2(delta_ppm: float, gt_per_ppm: float = GT_CO2_PER_PPM) -> float
     return delta_ppm * gt_per_ppm
 
 
+# --- process: regeneration sensible heat (L1) ---------------------------------
+
+def regeneration_sensible_heat(
+    cp_kj_per_kg_k: float, delta_t_k: float, working_capacity_mol_per_kg: float
+) -> float:
+    """Sensible-heat penalty of a temperature-swing (TSA) regeneration, per mole of
+    CO2 cycled:
+
+        q = cp * delta_T / working_capacity        [kJ/mol CO2]
+
+    Heating the whole sorbent bed by delta_T to desorb costs cp*delta_T per kg, spread
+    over the working capacity (mol CO2/kg) released that cycle. This is WHY real TSA
+    sits far above the separation floor: at cp~1 kJ/kg/K, delta_T~100 K, working
+    capacity~1 mol/kg this is ~100 kJ/mol — independent of, and on top of, W_min.
+    Returns kJ/mol CO2 (heat-integration/recovery not modelled — a raw upper estimate)."""
+    if working_capacity_mol_per_kg <= 0:
+        raise ValueError(f"working_capacity must be > 0: {working_capacity_mol_per_kg}")
+    if cp_kj_per_kg_k < 0 or delta_t_k < 0:
+        raise ValueError("cp and delta_T must be >= 0")
+    return cp_kj_per_kg_k * delta_t_k / working_capacity_mol_per_kg
+
+
+# --- storage: isothermal compression work (L4) --------------------------------
+
+def isothermal_compression_work(p_final: float, p_initial: float, temp_k: float = 298.15) -> float:
+    """Ideal isothermal compression work per mole of gas:
+
+        W = R * T * ln(p_final / p_initial)        [J/mol]
+
+    For pipeline/injection CO2 from ~1 bar to 12 MPa (120 bar) at 298 K this is
+    ~11.9 kJ/mol — the storage-compression add-on to the capture energy. Ideal-gas,
+    isothermal, single-stage; real multi-stage compression with intercooling is higher."""
+    if p_final <= 0 or p_initial <= 0:
+        raise ValueError("pressures must be > 0")
+    if temp_k <= 0:
+        raise ValueError("temp_k must be > 0")
+    return R_GAS * temp_k * math.log(p_final / p_initial)
+
+
+# --- sorbent: Langmuir coverage / binding optimum (L0) ------------------------
+
+def langmuir_coverage(
+    e_ads_kj_per_mol: float,
+    partial_pressure_bar: float,
+    temp_k: float = 298.15,
+    pre_exp_bar_inv: float = 1e-6,
+) -> float:
+    """Equilibrium fractional surface coverage from a Langmuir isotherm with an
+    Arrhenius-style affinity:
+
+        b = pre_exp * exp(E_ads / R T)     theta = b*p / (1 + b*p)
+
+    `e_ads_kj_per_mol` is the (positive) adsorption energy. Too weak -> theta tiny at
+    the 4.2e-4 bar DAC partial pressure (no uptake); too strong -> theta ~ 1 but the
+    same E_ads must be paid back to regenerate. The pre-exponential is a documented
+    representative entropic prefactor, not fitted. Returns theta in [0, 1)."""
+    if partial_pressure_bar < 0 or temp_k <= 0 or pre_exp_bar_inv <= 0:
+        raise ValueError("invalid Langmuir inputs")
+    b = pre_exp_bar_inv * math.exp(e_ads_kj_per_mol * 1000.0 / (R_GAS * temp_k))
+    bp = b * partial_pressure_bar
+    return bp / (1.0 + bp)
+
+
+# --- plant: air throughput per ton CO2 (L4) -----------------------------------
+
+def air_volume_per_ton_co2(
+    x_co2: float, air_density_kg_m3: float = 1.2, capture_efficiency: float = 1.0
+) -> float:
+    """Volume of air that must pass the contactor to capture one ton of CO2 at mole
+    fraction `x_co2` and a given single-pass capture efficiency:
+
+        n_CO2 = 1e6 g / M_CO2          n_air = n_CO2 / (x_co2 * efficiency)
+        V_air = n_air * M_air[kg/mol] / rho_air
+
+    At 420 ppm, eff=1 this is ~1.3e9 m^3 air per ton CO2 — the air-handling scale wall
+    behind DAC fan power. M_air = 0.02896 kg/mol; rho default 1.2 kg/m^3."""
+    if not (0.0 < x_co2 < 1.0):
+        raise ValueError(f"x_co2 must be in (0,1): {x_co2}")
+    if not (0.0 < capture_efficiency <= 1.0):
+        raise ValueError(f"capture_efficiency must be in (0,1]: {capture_efficiency}")
+    if air_density_kg_m3 <= 0:
+        raise ValueError("air_density must be > 0")
+    m_air_kg_per_mol = 0.02896
+    n_co2 = 1e6 / M_CO2
+    n_air = n_co2 / (x_co2 * capture_efficiency)
+    return n_air * m_air_kg_per_mol / air_density_kg_m3
+
+
 # --- falsifier harness --------------------------------------------------------
 
 @dataclass

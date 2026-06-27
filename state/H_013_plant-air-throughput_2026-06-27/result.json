@@ -1,0 +1,47 @@
+{
+  "metrics": {
+    "air_per_ton_m3": 1305649.2412987675,
+    "air_per_ton_eff50_m3": 2611298.482597535,
+    "annual_air_m3_yr": 1305649241298.7676,
+    "scale_ratio_climeworks": 250.0,
+    "air_per_ton_flue_m3": 4569.772344545687,
+    "pure_co2_raises": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-013-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-013-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-013-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-013-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-013-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-013-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = scale-up arithmetic sound (250x) and the binding duty is air handling: ~1.3e6 m3 air/ton -> ~1.3e12 m3/yr at 1 Mt/yr (a throughput/fan-power wall, not chemistry)."
+}
