@@ -108,7 +108,9 @@ Gt/yr) — so every lattice-derived number must clear a physics bounds-check fir
   were **all run** — 모두 검증 — landing 2 🟢 / 3 🟡 / 6 🔴). The 6 negatives (centrifuge KE 644× floor,
   CO₂ frost −143°C, laser bond 28× floor, gas-phase O₂ magnet, naive photoswitch, air-clathrate) are the
   negative space; survivors: enhanced weathering + artificial leaf (🟢), vortex/electro-swing/breathing
-  concrete (🟡). Full landscape in `state/sf-brainstorm-2026-06-27.md`.
+  concrete (🟡). Full landscape in `state/sf-brainstorm-2026-06-27.md`. A prior-art audit
+  (`state/novelty-check-2026-06-27.md`) found **0/11 mechanisms genuinely novel** — all are existing
+  research fields; the novel contribution is the *unified falsifiable verification*, not the ideas.
 - `tool/carbon_capture.py` — shared deterministic harness (separation floor, headroom,
   gravimetric bound, honeycomb P/√A, falsifier ledger).
 - `state/H_*/` — per-hypothesis run script + `result.json`.
