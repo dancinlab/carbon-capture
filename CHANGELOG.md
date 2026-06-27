@@ -2,6 +2,24 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — H_017: frontier breakthrough (reference-match vs measured DAC data)
+
+- Crossed the closed-form dry boundary by ingesting MEASURED literature anchors (the $0
+  data-ingestion the research pass identified) and testing whether the harness predicts them:
+  - **H_017** reference-match-measured 🟢 SUPPORTED — bare Mg-MOF-74 (measured binding 34.3 kJ/mol,
+    Springer 2026) is predicted θ≈4.3e-4 at 400 ppm (fails at DAC) yet θ≈0.093 at flue (216×),
+    matching the measured **<1 mmol/g at 400 ppm (needs piperazine, ScienceDirect 2025) vs 3.67 mmol/g
+    at 0.1 bar (MDPI 2024)**; and 48 mmol/g = 24× the measured best 400-ppm uptake (~2 mmol/g).
+    The harness now PREDICTS measured reality — self-contained thermodynamics → literature-validated.
+  - **Verdict-integrity note (honesty)**: run 1 gave a spurious 5/6 FALSIFIED from a falsifier-threshold
+    transcription error (F-017-5 encoded `>0.05` g/g, contradicting the card's own prose = the 1.0 g/g
+    H_003 bound). Diagnosed by suspecting the falsifier first, corrected to 1.0 g/g (registered intent,
+    NOT tuned to outcome), re-ran → 6/6 SUPPORTED. Both runs documented in the card.
+- `REGISTRY.jsonl`: +1 (🟢; now **17 total** — 15 🟢 / 2 🟡).
+- `ARCHITECTURE.json` lockstep: `verification` node → 17 verdicts; `dry-boundary` node updated (frontier
+  crossed; new frontier H_018+ = kinetics/cycle-life/CAPEX data, still $0); `L0.candidates` gains the
+  measured Mg-MOF-74 reality check.
+
 ## 2026-06-27 — 실측전 research pass over the dry-boundary open questions
 
 - Ran a literature pass (`sidecar research arxiv|web|fetch`) BEFORE any DFT/GPU/screening spend,
