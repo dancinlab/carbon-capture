@@ -1,0 +1,60 @@
+{
+  "metrics": {
+    "dac_net_dirty": 0.32499999999999996,
+    "dac_nnr": 0.06018518518518518,
+    "weathering_nnr": 0.8009259259259258,
+    "leaf_nnr": 5.430555555555556,
+    "adv_weathering": 13.307692307692307,
+    "adv_moisture": 44.07692307692308,
+    "adv_leaf": 90.23076923076924,
+    "best_path": "artificial-leaf",
+    "best_adv": 90.23076923076924,
+    "nc_same_active_same_nnr": true,
+    "zero_raises": true,
+    "ratio_dirty": 13.307692307692307,
+    "ratio_clean": 5.324324324324324,
+    "old_dac_net_dirty": -0.125
+  },
+  "falsifiers": [
+    {
+      "name": "F-020-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-020-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-020-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-020-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-020-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-020-6",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-020-7",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 7,
+  "n_total": 7,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = on a fossil grid, free-energy paths overwhelmingly dominate electric DAC on net-CO2-per-active-grid-energy: enhanced weathering 13x, moisture-swing 44x, artificial leaf 90x. The unified cross-family FoM is the NOVEL (methodological) contribution; the 13-90x are its decisive numbers. (Energy axis only \u2014 DAC still wins on rate/footprint, see Limits.)"
+}
