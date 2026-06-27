@@ -293,6 +293,53 @@ def humidity_to_co2_ratio(
     return x_h2o / x_co2
 
 
+# --- synthesis: total DAC energy decomposition (system optimizer) -------------
+
+# kJ/mol CO2 per GJ/ton CO2: 1 GJ/ton = 1e9 J / (1e6 g / M_CO2 g/mol) = M_CO2*1e3 J/mol.
+KJ_PER_MOL_PER_GJ_TON = M_CO2  # 1 GJ/ton ~= 44.009 kJ/mol
+
+
+def total_dac_energy(
+    working_capacity_mol_per_kg: float,
+    delta_t_k: float = 100.0,
+    cp_kj_per_kg_k: float = 1.0,
+    heat_recovery: float = 0.0,
+    include_compression: bool = True,
+    x_co2: float = 420e-6,
+    temp_k: float = 298.15,
+) -> dict:
+    """Synthesis model: total addressable DAC energy per mole CO2, decomposed into the
+    three VERIFIED component terms (each its own hypothesis):
+
+        E_sep   = min_separation_work(x, T)               (H_001, irreducible 2nd-law floor)
+        E_regen = regeneration_sensible_heat(...) * (1 - heat_recovery)   (H_010, addressable)
+        E_comp  = isothermal_compression_work(120 bar, 1 bar, T)   (H_011, storage only)
+        E_total = E_sep + E_regen + E_comp
+
+    All terms in kJ/mol CO2; also reports GJ/ton and kWh/ton. `heat_recovery` in [0,1)
+    models heat integration; `include_compression=False` is the conversion/aqueous path
+    (H_008 / moisture-swing) that skips storage compression. This composes the verified
+    primitives into one objective so the optimal operating point can be searched — it is a
+    LOWER-BOUND on the addressable terms (ignores heat-of-adsorption, water co-load H_016,
+    fan power H_013, and kinetics), not a full plant model."""
+    if not (0.0 <= heat_recovery < 1.0):
+        raise ValueError(f"heat_recovery must be in [0,1): {heat_recovery}")
+    e_sep = min_separation_work(x_co2, temp_k) / 1000.0
+    e_regen = regeneration_sensible_heat(cp_kj_per_kg_k, delta_t_k,
+                                         working_capacity_mol_per_kg) * (1.0 - heat_recovery)
+    e_comp = (isothermal_compression_work(120.0, 1.0, temp_k) / 1000.0
+              if include_compression else 0.0)
+    e_total = e_sep + e_regen + e_comp
+    return {
+        "e_sep_kj_mol": e_sep,
+        "e_regen_kj_mol": e_regen,
+        "e_comp_kj_mol": e_comp,
+        "e_total_kj_mol": e_total,
+        "e_total_gj_ton": e_total / KJ_PER_MOL_PER_GJ_TON,
+        "e_total_kwh_ton": e_total / KJ_PER_MOL_PER_GJ_TON * 1e9 / 3.6e6,
+    }
+
+
 # --- falsifier harness --------------------------------------------------------
 
 @dataclass
