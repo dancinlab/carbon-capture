@@ -2,6 +2,29 @@
 
 All notable changes to carbon-capture. Append-only; newest on top.
 
+## 2026-06-27 — 모두 검증: graduate all 11 🜂 ABSTRACT cards by running their kernels
+
+- Ran every H_A00N imagination card's pre-registered falsifiable kernel deterministically (one DRY
+  driver `state/verify-all-abstract_2026-06-27/verify_abstract.py` → 11 `result_H_A00N.json` + summary),
+  graduating each in place from 🜂 ABSTRACT to its verdict tier (canonical-naming: same id, update-in-place).
+  Honest tally **2 🟢 SUPPORTED · 3 🟡 PARTIAL · 6 🔴 FALSIFIED**:
+  - 🟢 **H_A010 fast-weather** — milling olivine (~300 kWh/ton) ≪ capture → net +0.98 (clean) / +0.86
+    (dirty grid) → robustly net-negative (unlike electric DAC); decadal rate is the caveat.
+  - 🟢 **H_A011 artificial-leaf** — 52 km² to photo-reduce 1 Mt-C/yr at 10% → energy-free (sunlight),
+    AREA-bound not energy-bound.
+  - 🟡 **H_A005 tame-twister** (low-ΔP air 36 kWh/ton, residence risk) · **H_A006 carbon-battery**
+    (electro-swing 48–193 kJ/mol amine band, energy-quality + grid-storage advantage) · **H_A007
+    breathing-stone** (Gt-scale areal ceiling, carbonate-crust saturation cap).
+  - 🔴 **A001 centrifuge** (air-spin KE 644× floor) · **A002 night-frost** (CO₂ frost −143°C vs −50°C
+    radiative floor) · **A003 photon-cleaver** (bond 531 kJ/mol = 28× floor) · **A004 oxy-magnet**
+    (gas-phase mag/thermal 7.5e-4) · **A008 solar-blink** (1 photon 2.4× worse than heat) · **A009
+    sky-clathrate** (hydrate needs −74°C from air). The 6 negatives sharpen why separation≈floor wins.
+- Harness +9 ABSTRACT-kernel primitives (centrifuge_separation_factor, centrifuge_kinetic_energy,
+  clausius_clapeyron_temp, ev_to_kj_mol, magnetic_thermal_ratio, fan_work_per_ton, electrochem_energy,
+  areal_capture_ceiling, solar_area_for_carbon).
+- `REGISTRY.jsonl`: 11 H_A lines re-tiered (🜂 → 2🟢/3🟡/6🔴; 30 lines total). `ARCHITECTURE.json`
+  `HYPOTHESES.abstract` node → graduated tally. README lockstep.
+
 ## 2026-06-27 — 🜂 ABSTRACT brainstorm round 2 (H_A009–H_A011): 4 more orthogonal families → dry
 
 - break-walls correction: the round-1 "dry at 7 families" was premature. Re-enumeration adds 4

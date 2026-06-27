@@ -3,8 +3,8 @@ id: H_A011
 slug: artificial-leaf
 title: 🜂 ABSTRACT — photo-electrochemical "leaf" reduces CO₂ to fuel with only sunlight + water, fusing capture and conversion (H_008) into one $0-energy step; large area is the cost
 domain: transmute
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: supported
+tier: 🟢 SUPPORTED (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + solar-to-fuel efficiency × area kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -34,7 +34,14 @@ H_008 showed conversion is energy-DOMINANT on grid power; the artificial leaf pa
 free photons instead — flipping conversion from a cost into a sunlight-harvest. Capture + reduction in
 one device, no separate compression (H_011) or thermal regeneration (H_010).
 
-## Honest status
+## Verdict
+
+**🟢 SUPPORTED** — graduated by running the kernel. Land area to photo-reduce 1 Mt-C/yr at 10%
+solar-to-fuel = **52 km²** → energetically *free* (sunlight), so the binding constraint is **AREA +
+catalyst durability, NOT energy** — the opposite trade from electric DAC, and it sidesteps the H_008
+reduction-energy wall by paying it in photons. Artifact: `result_H_A011.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination/conjecture (artificial photosynthesis is a real lab field; planetary-scale fuel
 synthesis is the SF leap). No run, no verdict. The efficiency × area kernel decides it. Promote if modeled.

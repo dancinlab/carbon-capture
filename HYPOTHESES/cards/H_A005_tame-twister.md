@@ -3,8 +3,8 @@ id: H_A005
 slug: tame-twister
 title: 🜂 ABSTRACT — solar atmospheric-vortex engine as the contactor, ingesting planetary air volumes with weather instead of fans (attacks the H_013 air-handling wall)
 domain: plant
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: partial
+tier: 🟡 PARTIAL (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + vortex-power-vs-fan-power kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -33,7 +33,14 @@ vortex supplies the air-moving work at a fraction of fan electricity IF the cont
 H_013 framed air handling as the binding DAC duty; this proposes *weather as the fan* — a
 meteorological-scale contactor no level of the spec imagines.
 
-## Honest status
+## Verdict
+
+**🟡 PARTIAL** — graduated by running the kernel. Air-moving work at a low 100 Pa open-mesh drop =
+**0.13 GJ/ton (36 kWh/ton)** — small enough for a solar vortex to plausibly supply IF ΔP stays low; at
+1000 Pa it crosses 0.5 GJ/ton, so the **residence-time-vs-ΔP tradeoff is the real open risk**, not the
+airflow. Viable-in-principle, unproven in residence. Artifact: `result_H_A005.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination. No run, no verdict. Among the more physically-open ideas (vortex engines are
 demonstrated at small scale); the residence-time-vs-ΔP kernel is the thing to model. Promote if run.

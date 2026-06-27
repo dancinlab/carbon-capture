@@ -3,8 +3,8 @@ id: H_A004
 slug: oxy-magnet
 title: 🜂 ABSTRACT — magnetic removal of paramagnetic O₂ to concentrate CO₂ (likely falsified in gas phase — magnetic energy ≪ thermal by ~10³ at 10 T)
 domain: process
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: falsified
+tier: 🔴 FALSIFIED (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + magnetic-vs-thermal energy kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -31,7 +31,13 @@ impractically high fields.
 
 Separation by magnetic susceptibility — orthogonal to binding-energy (H_012), mass (H_A001), and charge.
 
-## Honest status
+## Verdict
+
+**🔴 FALSIFIED** (gas phase) — graduated by running the kernel. Gas-phase O₂ magnetic/thermal energy
+ratio at a strong 10 T = **7.5e-4 (~10³× too weak)** → magnetic sorting is overwhelmed by thermal
+motion. Survives only for *condensed/liquid* O₂, not ambient air. Artifact: `result_H_A004.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination. No run, no verdict. Kernel suggests a gas-phase NEGATIVE; the idea survives only in a
 cryo/condensed regime (links H_A002/altitude-still). Honest negative-space.

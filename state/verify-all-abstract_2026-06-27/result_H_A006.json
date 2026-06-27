@@ -1,0 +1,24 @@
+{
+  "metrics": {
+    "e_low_kj_mol": 48.2425,
+    "e_high_kj_mol": 192.97,
+    "low_over_floor": 2.502915099346567
+  },
+  "falsifiers": [
+    {
+      "name": "A006-below-floor",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "A006-in-band",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 2,
+  "n_total": 2,
+  "all_pass": true,
+  "verdict": "PARTIAL",
+  "summary": "electro-swing energy = 48-193 kJ/mol (amine-TSA band, 2.5-10.0x floor) \u2014 NOT below the floor, but electrical/clean-couplable with zero thermal swing; advantage is energy quality + grid-storage fusion, not a lower number"
+}

@@ -1,0 +1,19 @@
+{
+  "metrics": {
+    "frost_point_c": -143.40000202439245,
+    "radiative_floor_c": -50.0,
+    "gap_k": 93.40000202439245
+  },
+  "falsifiers": [
+    {
+      "name": "A002-reachable",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 1,
+  "n_total": 1,
+  "all_pass": true,
+  "verdict": "FALSIFIED",
+  "summary": "CO2 frost point at 400-ppm partial pressure = -143 C, 93 K below the ~-50 C passive radiative-cooling floor -> cannot freeze CO2 from air passively"
+}

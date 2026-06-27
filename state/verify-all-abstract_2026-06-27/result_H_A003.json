@@ -1,0 +1,19 @@
+{
+  "metrics": {
+    "bond_kj_mol": 530.6675,
+    "bond_over_floor": 27.532066092812244,
+    "with_30pct_laser": 91.77355364270748
+  },
+  "falsifiers": [
+    {
+      "name": "A003-competitive",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 1,
+  "n_total": 1,
+  "all_pass": true,
+  "verdict": "FALSIFIED",
+  "summary": "C=O dissociation = 531 kJ/mol = 28x the separation floor (>92x after laser inefficiency) -> destroying costs ~100x separating"
+}

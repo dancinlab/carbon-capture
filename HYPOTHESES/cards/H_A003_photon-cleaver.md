@@ -3,8 +3,8 @@ id: H_A003
 slug: photon-cleaver
 title: 🜂 ABSTRACT — mode-selective IR laser photodissociation of CO₂ in mid-air (likely falsified on energy — bond energy alone is 27× the separation floor)
 domain: transmute
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: falsified
+tier: 🔴 FALSIFIED (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + photon-energy kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -32,7 +32,14 @@ point-source plume destruction), never bulk DAC.
 Inverts the whole premise: don't *collect* CO₂, *delete* it. Photonic-destruction axis, untouched
 by the sorbent/process chain.
 
-## Honest status
+## Verdict
+
+**🔴 FALSIFIED** — graduated by running the kernel. C=O dissociation = **531 kJ/mol = 28× the
+separation floor** (>92× after ~30% laser wall-plug) → destroying the molecule costs ~100× separating
+it, and the products re-oxidize. Sharpens why *separation* (≈floor) beats *dissociation*. Artifact:
+`result_H_A003.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination. No run, no verdict. Kernel points to a clean energy NEGATIVE — sharpens why
 *separation* (cheap, ~floor) beats *dissociation* (expensive, bond-energy-bound). Honest negative-space.

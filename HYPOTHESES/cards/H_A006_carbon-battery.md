@@ -3,8 +3,8 @@ id: H_A006
 slug: carbon-battery
 title: 🜂 ABSTRACT — redox-active (quinone) electro-swing electrode where capture and grid storage are the SAME device; no thermal swing (most live of the set)
 domain: process
-status: abstract-unverified
-tier: 🜂 ABSTRACT
+status: partial
+tier: 🟡 PARTIAL (graduated from 🜂 ABSTRACT by running the kernel)
 exploration_method: imagination + electrons-per-CO₂ energy kernel (NOT run)
 pre_register_frozen: false
 deterministic: false
@@ -35,7 +35,14 @@ H_019 prescribed "remove the sensible-heat term"; this is a concrete electrochem
 fuses capture with grid storage — a dual-use no level of the spec proposes. Closest to real (cf. MIT
 electro-swing) yet SF-extended to planetary "carbon batteries."
 
-## Honest status
+## Verdict
+
+**🟡 PARTIAL** — graduated by running the kernel. Electro-swing energy = **48–193 kJ/mol** (amine-TSA
+band, 2.5–10× the floor) — **NOT below the floor**, but electrical (exergy-clean, renewable-couplable)
+with zero thermal swing. The live advantage is energy *quality* + capture/grid-storage fusion, not a
+lower absolute number. The most promotable concept. Artifact: `result_H_A006.json`.
+
+## Original conjecture (pre-run)
 
 🜂 Imagination/conjecture (real electro-swing exists; the grid-storage fusion is the SF leap). No run,
 no verdict. The most promotable card — a clean H_0xx if the electrons-per-CO₂ kernel is actually modeled.

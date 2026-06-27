@@ -1,0 +1,19 @@
+{
+  "metrics": {
+    "photon_kj_mol": 241.2125,
+    "thermal_kj_mol": 100.0,
+    "photon_over_thermal": 2.412125
+  },
+  "falsifiers": [
+    {
+      "name": "A008-beats-thermal",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 1,
+  "n_total": 1,
+  "all_pass": true,
+  "verdict": "FALSIFIED",
+  "summary": "one visible photon = 241 kJ/mol vs ~100 kJ/mol thermal (H_010) -> naive 1-photon-per-CO2 optical regen is 2.4x WORSE than heat; viable ONLY with cooperative quantum-yield > 1"
+}

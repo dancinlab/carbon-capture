@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "hydrate_stable_c_at_400ppm": -73.67644494705797
+  },
+  "falsifiers": [
+    {
+      "name": "A009-air-formable",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 1,
+  "n_total": 1,
+  "all_pass": true,
+  "verdict": "FALSIFIED",
+  "summary": "CO2 hydrate stability at the 400-ppm partial pressure needs ~-74 C -> cannot form a clathrate directly from ambient air without pre-concentration (storage-phase still viable)"
+}

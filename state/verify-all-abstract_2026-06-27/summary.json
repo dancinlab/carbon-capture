@@ -1,0 +1,76 @@
+{
+  "floor_kj_mol": 19.274525137746224,
+  "rows": [
+    {
+      "id": "H_A001",
+      "verdict": "FALSIFIED",
+      "pass": "1/2",
+      "summary": "separation easy (alpha=3.2, ~7 stages) but air-spin KE = 12411 kJ/mol = 644x the floor -> impractical for DAC"
+    },
+    {
+      "id": "H_A002",
+      "verdict": "FALSIFIED",
+      "pass": "1/1",
+      "summary": "CO2 frost point at 400-ppm partial pressure = -143 C, 93 K below the ~-50 C passive radiative-cooling floor -> cannot freeze CO2 from air passively"
+    },
+    {
+      "id": "H_A003",
+      "verdict": "FALSIFIED",
+      "pass": "1/1",
+      "summary": "C=O dissociation = 531 kJ/mol = 28x the separation floor (>92x after laser inefficiency) -> destroying costs ~100x separating"
+    },
+    {
+      "id": "H_A004",
+      "verdict": "FALSIFIED",
+      "pass": "1/1",
+      "summary": "gas-phase O2 magnetic/thermal energy ratio at 10 T = 7.5e-04 (~10^3x too weak) -> magnetic sorting overwhelmed by thermal motion; works only for condensed O2"
+    },
+    {
+      "id": "H_A005",
+      "verdict": "PARTIAL",
+      "pass": "2/2",
+      "summary": "air-moving work at a low 100 Pa open-mesh drop = 0.13 GJ/ton (36 kWh/ton) \u2014 small enough for a solar vortex to supply IF dP stays low; residence-time vs dP is the open risk"
+    },
+    {
+      "id": "H_A006",
+      "verdict": "PARTIAL",
+      "pass": "2/2",
+      "summary": "electro-swing energy = 48-193 kJ/mol (amine-TSA band, 2.5-10.0x floor) \u2014 NOT below the floor, but electrical/clean-couplable with zero thermal swing; advantage is energy quality + grid-storage fusion, not a lower number"
+    },
+    {
+      "id": "H_A007",
+      "verdict": "PARTIAL",
+      "pass": "1/1",
+      "summary": "urban-surface areal ceiling = 4-36 Gt/yr (same order as the H_009 target) IF every surface participated \u2014 but carbonate-crust saturation and durability cap it at a thin self-renewing layer"
+    },
+    {
+      "id": "H_A008",
+      "verdict": "FALSIFIED",
+      "pass": "1/1",
+      "summary": "one visible photon = 241 kJ/mol vs ~100 kJ/mol thermal (H_010) -> naive 1-photon-per-CO2 optical regen is 2.4x WORSE than heat; viable ONLY with cooperative quantum-yield > 1"
+    },
+    {
+      "id": "H_A009",
+      "verdict": "FALSIFIED",
+      "pass": "1/1",
+      "summary": "CO2 hydrate stability at the 400-ppm partial pressure needs ~-74 C -> cannot form a clathrate directly from ambient air without pre-concentration (storage-phase still viable)"
+    },
+    {
+      "id": "H_A010",
+      "verdict": "SUPPORTED",
+      "pass": "2/2",
+      "summary": "milling olivine (~300 kWh/ton) is small vs capture -> net removal = +0.98 (clean grid) and +0.86 even on a dirty grid -> robustly net-negative; the real caveat is the decadal weathering RATE, not the energy"
+    },
+    {
+      "id": "H_A011",
+      "verdict": "SUPPORTED",
+      "pass": "1/1",
+      "summary": "land area to photo-reduce 1 Mt-C/yr at 10% solar-to-fuel = 52 km2 -> energetically free (sunlight); the binding constraint is AREA + catalyst durability, NOT energy (the opposite trade from electric DAC)"
+    }
+  ],
+  "tally": {
+    "SUPPORTED": 2,
+    "PARTIAL": 3,
+    "FALSIFIED": 6
+  }
+}
