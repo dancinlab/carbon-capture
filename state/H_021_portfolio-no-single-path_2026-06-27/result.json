@@ -1,0 +1,55 @@
+{
+  "metrics": {
+    "single_winner": null,
+    "argmax": {
+      "energy": "artificial-leaf",
+      "rate": "electric-DAC",
+      "footprint": "electric-DAC",
+      "permanence": "electric-DAC"
+    },
+    "dac_unique_best_rate": true,
+    "dac_best_footprint": true,
+    "energy_best_path": "artificial-leaf",
+    "energy_best_is_free": true,
+    "all_paths_worst_somewhere": true,
+    "self_dominates": false,
+    "control_dominates": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-021-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-021-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-021-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-021-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-021-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-021-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = no path dominates all four axes (energy/rate/footprint/permanence) -> removal is a PORTFOLIO, not a single winner; 'is electric DAC THE path?' is mis-framed."
+}

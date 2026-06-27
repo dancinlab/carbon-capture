@@ -1,0 +1,48 @@
+{
+  "metrics": {
+    "crossover_gen3": 0.6666666666666666,
+    "crossover_nextgen": 1.3333333333333333,
+    "abatement_wins_at_coal": true,
+    "dac_wins_at_gas": true,
+    "clean_grid_dac_only": true,
+    "crossover_rises_with_efficiency": true,
+    "zero_raises": true
+  },
+  "falsifiers": [
+    {
+      "name": "F-023-1",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-023-2",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-023-3",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-023-4",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-023-5",
+      "triggered": false,
+      "status": "PASS"
+    },
+    {
+      "name": "F-023-6",
+      "triggered": false,
+      "status": "PASS"
+    }
+  ],
+  "n_pass": 6,
+  "n_total": 6,
+  "all_pass": true,
+  "verdict": "SUPPORTED",
+  "interpretation": "SUPPORTED = while the marginal grid plant emits > 0.667 kgCO2/kWh (coal), a clean kWh AVOIDS more CO2 displacing fossil than it REMOVES via electric DAC -> abatement before removal; DAC's value rises as the grid cleans (g* widens with efficiency)."
+}
